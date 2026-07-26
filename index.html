@@ -1,0 +1,2585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Senior Health Check — Reference Guide</title>
+<meta name="description" content="A working reference for planning a senior citizen executive health check: full test list, hospital comparison, 3-week plan, checklists, and the assessments packages usually miss.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14212B;
+    --ink-soft:#48586A;
+    --ink-faint:#7C8CA0;
+    --paper:#FFFFFF;
+    --canvas:#EBF1F5;
+    --canvas-deep:#DCE6EC;
+    --line:#D8E2E8;
+    --line-soft:#E7EEF2;
+    --primary:#1B5A78;
+    --primary-dark:#123F57;
+    --primary-tint:#E5EFF4;
+    --amber:#A6701D;
+    --amber-tint:#FBF1DE;
+    --amber-line:#E9CFA0;
+    --good:#2E7D5B;
+    --good-tint:#E8F3EC;
+    --radius-s:6px;
+    --radius-m:12px;
+    --radius-l:18px;
+    --shadow-card: 0 1px 2px rgba(20,33,43,0.04), 0 12px 32px -16px rgba(20,33,43,0.18);
+    --maxw: 900px;
+    --maxw-wide: 1040px;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+  }
+
+  body{
+    margin:0;
+    background:var(--canvas);
+    color:var(--ink);
+    font-family:"IBM Plex Sans", system-ui, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,h4{
+    font-family:"Newsreader", Georgia, serif;
+    color:var(--ink);
+    font-weight:600;
+    line-height:1.25;
+    letter-spacing:-0.01em;
+  }
+
+  a{ color:var(--primary); }
+  a:hover{ color:var(--primary-dark); }
+
+  :focus-visible{
+    outline:2.5px solid var(--primary);
+    outline-offset:2px;
+    border-radius:3px;
+  }
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    background:var(--primary);
+    color:#fff;
+    padding:18px 20px 14px;
+  }
+  .topbar-inner{
+    max-width:var(--maxw-wide);
+    margin:0 auto;
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .brand-mark{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    background:rgba(255,255,255,0.14);
+    border:1px solid rgba(255,255,255,0.28);
+    padding:3px 8px;
+    border-radius:4px;
+    white-space:nowrap;
+  }
+  .topbar h1{
+    font-family:"Newsreader", Georgia, serif;
+    font-size:22px;
+    font-weight:600;
+    color:#fff;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .topbar .tagline{
+    font-size:13px;
+    color:rgba(255,255,255,0.72);
+    margin-left:auto;
+    font-family:"IBM Plex Mono", monospace;
+    letter-spacing:0.02em;
+  }
+
+  /* ---------- Folder tab navigation ---------- */
+  .tabs-region{
+    background:var(--primary);
+    padding:0 12px;
+  }
+  .tablist{
+    max-width:var(--maxw-wide);
+    margin:0 auto;
+    display:flex;
+    gap:4px;
+    list-style:none;
+    padding:0 8px;
+    margin-top:2px;
+    overflow-x:auto;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+  }
+  .tablist::-webkit-scrollbar{ display:none; }
+  .tab-btn{
+    appearance:none;
+    border:none;
+    cursor:pointer;
+    background:rgba(255,255,255,0.10);
+    color:rgba(255,255,255,0.82);
+    font-family:"IBM Plex Sans", sans-serif;
+    font-size:14px;
+    font-weight:500;
+    white-space:nowrap;
+    padding:11px 18px 10px;
+    border-radius:10px 10px 0 0;
+    position:relative;
+    top:1px;
+    transition:background .15s ease, color .15s ease, transform .15s ease;
+    flex:0 0 auto;
+  }
+  .tab-btn .num{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:11px;
+    opacity:0.75;
+    margin-right:7px;
+  }
+  .tab-btn:hover{ background:rgba(255,255,255,0.18); color:#fff; }
+  .tab-btn[aria-selected="true"]{
+    background:var(--paper);
+    color:var(--primary-dark);
+    font-weight:600;
+  }
+  .tab-btn[aria-selected="true"] .num{ opacity:0.55; color:var(--primary); }
+
+  /* ---------- Content shell ---------- */
+  main{
+    max-width:var(--maxw-wide);
+    margin:0 auto;
+    padding:0 12px 64px;
+  }
+  .panel-card{
+    background:var(--paper);
+    border-radius:0 var(--radius-l) var(--radius-l) var(--radius-l);
+    box-shadow:var(--shadow-card);
+    padding:38px clamp(20px, 4vw, 56px) 52px;
+    min-height:40vh;
+  }
+  .tabpanel{ display:none; }
+  .tabpanel.active{ display:block; animation:fade .25s ease; }
+  @keyframes fade{ from{ opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);} }
+
+  .panel-header{
+    border-bottom:1px solid var(--line);
+    padding-bottom:20px;
+    margin-bottom:28px;
+  }
+  .panel-eyebrow{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:12px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--primary);
+    margin:0 0 8px;
+  }
+  .panel-header h2{
+    font-size:clamp(26px, 3.4vw, 34px);
+    margin:0 0 8px;
+  }
+  .panel-header .dek{
+    color:var(--ink-soft);
+    font-size:16px;
+    margin:0;
+    max-width:60ch;
+  }
+
+  /* ---------- Typography inside panels ---------- */
+  .prose h2{ font-size:23px; margin:40px 0 14px; }
+  .prose h2:first-child{ margin-top:0; }
+  .prose h3{ font-size:19px; margin:28px 0 10px; color:var(--primary-dark); }
+  .prose h4{
+    font-family:"IBM Plex Sans", sans-serif;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--ink-faint);
+    font-weight:600;
+    margin:22px 0 8px;
+  }
+  .prose p{ margin:0 0 14px; color:var(--ink); }
+  .prose p.label{
+    margin:16px 0 4px;
+    font-weight:600;
+    font-size:13.5px;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+  }
+  .prose ul, .prose ol{ margin:0 0 16px; padding-left:1.35em; }
+  .prose li{ margin-bottom:5px; }
+  .prose ul ul, .prose ol ul { margin-top:6px; margin-bottom:6px; }
+  .prose strong{ color:var(--ink); font-weight:600; }
+  .prose hr{ border:none; border-top:1px solid var(--line); margin:32px 0; }
+
+  /* ---------- Tables ---------- */
+  .table-wrap{
+    overflow-x:auto;
+    margin:4px 0 26px;
+    border:1px solid var(--line);
+    border-radius:var(--radius-m);
+    -webkit-overflow-scrolling:touch;
+    background:
+      linear-gradient(90deg, var(--paper) 30%, rgba(255,255,255,0)),
+      linear-gradient(90deg, rgba(255,255,255,0), var(--paper) 70%) 100% 0,
+      linear-gradient(90deg, rgba(20,33,43,0.10), rgba(20,33,43,0)),
+      linear-gradient(90deg, rgba(20,33,43,0), rgba(20,33,43,0.10)) 100% 0;
+    background-repeat:no-repeat;
+    background-size:24px 100%, 24px 100%, 10px 100%, 10px 100%;
+    background-attachment:local, local, scroll, scroll;
+  }
+  table{
+    border-collapse:collapse;
+    width:100%;
+    min-width:640px;
+    font-size:14.5px;
+  }
+  thead th{
+    background:var(--primary-tint);
+    color:var(--primary-dark);
+    text-align:left;
+    font-family:"IBM Plex Sans", sans-serif;
+    font-weight:600;
+    font-size:12.5px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    padding:11px 14px;
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+  }
+  td{
+    padding:12px 14px;
+    border-bottom:1px solid var(--line-soft);
+    vertical-align:top;
+  }
+  tbody tr:last-child td{ border-bottom:none; }
+  tbody tr:nth-child(even){ background:#FAFCFD; }
+  td:first-child, th:first-child{
+    font-weight:600;
+    color:var(--primary-dark);
+    white-space:nowrap;
+  }
+
+  /* narrow 2-col simple tables (reference / score / links) get normal wrap on col 1 */
+  table.simple td:first-child, table.simple th:first-child{ white-space:normal; }
+
+  /* ---------- Flags / callouts ---------- */
+  .flag{
+    display:inline-block;
+    color:var(--amber);
+    font-weight:700;
+    margin-right:2px;
+  }
+  .callout{
+    border:1px solid var(--amber-line);
+    background:var(--amber-tint);
+    border-radius:var(--radius-m);
+    padding:16px 20px;
+    margin:18px 0 26px;
+  }
+  .callout p{ margin:0 0 8px; }
+  .callout p:last-child{ margin-bottom:0; }
+  .callout-title{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--amber);
+    font-weight:600;
+    margin-bottom:8px;
+    display:block;
+  }
+  .quote-block{
+    background:var(--primary-tint);
+    border-left:3px solid var(--primary);
+    border-radius:0 var(--radius-m) var(--radius-m) 0;
+    padding:18px 22px;
+    margin:18px 0;
+    font-family:"Newsreader", serif;
+    font-style:italic;
+    font-size:17px;
+    color:var(--primary-dark);
+  }
+  .quote-block + .quote-block{ margin-top:-8px; }
+
+  /* ---------- Checklists ---------- */
+  ul.check-list{ list-style:none; padding-left:0; margin:8px 0 20px; }
+  ul.check-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    padding:7px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  ul.check-list li:last-child{ border-bottom:none; }
+  ul.check-list .box{
+    flex:0 0 auto;
+    width:18px; height:18px;
+    border-radius:4px;
+    border:1.5px solid var(--ink-faint);
+    margin-top:2px;
+  }
+  ul.check-list.done .box{
+    background:var(--good-tint);
+    border-color:var(--good);
+    position:relative;
+  }
+  ul.check-list.done .box::after{
+    content:"✓";
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    font-size:12px; color:var(--good); font-weight:700;
+  }
+  ul.check-list.good .box{
+    background:var(--good-tint); border-color:var(--good);
+  }
+  ul.check-list.good .box::after{
+    content:"✓"; position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    font-size:12px; color:var(--good); font-weight:700;
+  }
+  ul.check-list.good li{ position:relative; }
+
+  /* ---------- Badges ---------- */
+  .rank{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:26px; height:26px;
+    border-radius:50%;
+    font-family:"IBM Plex Mono", monospace;
+    font-weight:600; font-size:13px;
+    background:var(--primary-tint); color:var(--primary-dark);
+    border:1px solid var(--line);
+  }
+  .rank.r1{ background:#F5E4B8; color:#7A5A10; border-color:#E6CE8C; }
+  .rank.r2{ background:#E4E9ED; color:#4A5560; border-color:#CFD8DE; }
+  .rank.r3{ background:#EFDCC7; color:#7A4B22; border-color:#E0C4A2; }
+
+  .score-stat{
+    display:flex; align-items:baseline; gap:10px;
+    background:var(--primary-tint);
+    border-radius:var(--radius-m);
+    padding:14px 20px;
+    margin:10px 0 24px;
+  }
+  .score-stat .num{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:30px; font-weight:600; color:var(--primary-dark);
+  }
+  .score-stat .of{ font-size:14px; color:var(--ink-soft); }
+
+  .score-bar{ position:relative; min-width:90px; }
+  .score-bar .track{
+    height:6px; border-radius:4px; background:var(--line-soft);
+    overflow:hidden; margin-bottom:4px;
+  }
+  .score-bar .fill{ height:100%; background:var(--primary); border-radius:4px; }
+  .score-bar .txt{ font-family:"IBM Plex Mono", monospace; font-size:12.5px; color:var(--ink-soft); }
+
+  /* ---------- Option cards (Comparison tab) ---------- */
+  .option-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
+    gap:14px;
+    margin:16px 0 30px;
+  }
+  .option-card{
+    border:1px solid var(--line);
+    border-radius:var(--radius-m);
+    padding:18px 20px;
+    background:#FCFDFE;
+  }
+  .option-card .tag{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:11px; text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--primary); margin-bottom:6px; display:block;
+  }
+  .option-card h4{ margin:0 0 4px !important; text-transform:none !important; letter-spacing:0 !important; color:var(--ink) !important; font-size:17px !important; font-family:"Newsreader", serif !important; font-weight:600 !important; }
+  .option-card ul{ margin:10px 0 0; padding-left:1.1em; font-size:14.5px; }
+  .option-card li{ margin-bottom:4px; }
+
+  /* ---------- Links list (Hospitals tab) ---------- */
+  .hospital-grid{
+    display:grid;
+    gap:12px;
+    margin-top:8px;
+  }
+  .hospital-row{
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    border:1px solid var(--line);
+    border-radius:var(--radius-m);
+    padding:16px 20px;
+    background:#FCFDFE;
+  }
+  .hospital-row h3{ margin:0; font-size:18px; }
+  .hospital-row a.visit{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:12.5px;
+    background:var(--primary);
+    color:#fff !important;
+    padding:8px 14px;
+    border-radius:8px;
+    white-space:nowrap;
+    text-decoration:none;
+  }
+  .hospital-row a.visit:hover{ background:var(--primary-dark); }
+
+  /* ---------- Test List: sidebar layout ---------- */
+  .tests-layout{ display:flex; gap:36px; align-items:flex-start; }
+  .tests-toc{
+    flex:0 0 232px;
+    position:sticky;
+    top:16px;
+    max-height:calc(100vh - 32px);
+    overflow-y:auto;
+    padding-right:6px;
+  }
+  .tests-toc ol{ list-style:none; margin:0; padding:0; counter-reset:toc; }
+  .tests-toc li{ counter-increment:toc; }
+  .tests-toc a{
+    display:flex; gap:8px;
+    font-size:13px;
+    color:var(--ink-soft);
+    text-decoration:none;
+    padding:6px 8px;
+    border-radius:6px;
+    line-height:1.35;
+  }
+  .tests-toc a::before{
+    content:counter(toc);
+    font-family:"IBM Plex Mono", monospace;
+    font-size:11px;
+    color:var(--ink-faint);
+    flex:0 0 auto;
+  }
+  .tests-toc a:hover{ background:var(--primary-tint); color:var(--primary-dark); }
+  .tests-toc a.current{ background:var(--primary-tint); color:var(--primary-dark); font-weight:600; }
+  .tests-content{ flex:1 1 auto; min-width:0; }
+  .tests-jump{ display:none; }
+
+  @media (max-width: 880px){
+    .tests-layout{ display:block; }
+    .tests-toc{ display:none; }
+    .tests-jump{
+      display:block;
+      margin-bottom:22px;
+    }
+    .tests-jump select{
+      width:100%;
+      font-family:"IBM Plex Sans", sans-serif;
+      font-size:14px;
+      padding:11px 14px;
+      border-radius:var(--radius-m);
+      border:1px solid var(--line);
+      background:var(--primary-tint);
+      color:var(--primary-dark);
+      font-weight:600;
+    }
+  }
+
+  section.test-sec{ scroll-margin-top:16px; padding-top:2px; }
+  section.test-sec + section.test-sec{ border-top:1px solid var(--line); margin-top:30px; padding-top:28px; }
+
+  /* ---------- Footer ---------- */
+  footer{
+    max-width:var(--maxw-wide);
+    margin:26px auto 0;
+    padding:0 20px 40px;
+    color:var(--ink-faint);
+    font-size:13px;
+    text-align:center;
+  }
+
+  @media (max-width:640px){
+    .topbar h1{ font-size:19px; }
+    .topbar .tagline{ display:none; }
+    .panel-card{ padding:26px 18px 40px; }
+    .hospital-row{ flex-direction:column; align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="brand-mark">Reference</span>
+    <h1>Senior Health Check Guide</h1>
+    <span class="tagline">8 working documents · compiled July 2026</span>
+  </div>
+</div>
+
+<div class="tabs-region">
+  <ul class="tablist" role="tablist" aria-label="Guide sections">
+    <li role="presentation"><button class="tab-btn" role="tab" id="tab-btn-tests" aria-controls="panel-tests" aria-selected="true" data-tab="tests"><span class="num">1</span>Test List</button></li>
+    <li role="presentation"><button class="tab-btn" role="tab" id="tab-btn-hospitals" aria-controls="panel-hospitals" aria-selected="false" tabindex="-1" data-tab="hospitals"><span class="num">2</span>Hospitals</button></li>
+    <li role="presentation"><button class="tab-btn" role="tab" id="tab-btn-comparison" aria-controls="panel-comparison" aria-selected="false" tabindex="-1" data-tab="comparison"><span class="num">3</span>Comparison</button></li>
+    <li role="presentation"><button class="tab-btn" role="tab" id="tab-btn-plan" aria-controls="panel-plan" aria-selected="false" tabindex="-1" data-tab="plan"><span class="num">4</span>3-Week Plan</button></li>
+    <li role="presentation"><button class="tab-btn" role="tab" id="tab-btn-checklist" aria-controls="panel-checklist" aria-selected="false" tabindex="-1" data-tab="checklist"><span class="num">5</span>Checklist</button></li>
+    <li role="presentation"><button class="tab-btn" role="tab" id="tab-btn-missed" aria-controls="panel-missed" aria-selected="false" tabindex="-1" data-tab="missed"><span class="num">6</span>Often Missed</button></li>
+    <li role="presentation"><button class="tab-btn" role="tab" id="tab-btn-questions" aria-controls="panel-questions" aria-selected="false" tabindex="-1" data-tab="questions"><span class="num">7</span>Questions</button></li>
+    <li role="presentation"><button class="tab-btn" role="tab" id="tab-btn-important" aria-controls="panel-important" aria-selected="false" tabindex="-1" data-tab="important"><span class="num">8</span>Must-Have</button></li>
+  </ul>
+</div>
+
+<main>
+  <div class="panel-card">
+  <section id="panel-tests" class="tabpanel active" role="tabpanel" aria-labelledby="tab-btn-tests">
+    <div class="panel-header">
+      <p class="panel-eyebrow">01 · Test List</p>
+      <h2>List of Tests</h2>
+      <p class="dek">The full test menu for a 70+ health check, organized by body system — what each test checks, why it matters at this age, and what to tell the doctor.</p>
+    </div>
+
+    <div class="tests-jump">
+      <select aria-label="Jump to section">
+        <option value="1-blood-count-clotting">1. Blood Count & Clotting</option>
+<option value="2-diabetes-metabolic-health">2. Diabetes & Metabolic Health</option>
+<option value="3-lipid-profile-advanced-cardiac-risk">3. Lipid Profile & Advanced Cardiac Risk</option>
+<option value="4-kidney-renal-function">4. Kidney (Renal) Function</option>
+<option value="5-liver-function">5. Liver Function</option>
+<option value="6-thyroid-function">6. Thyroid Function</option>
+<option value="7-vitamins-minerals-iron">7. Vitamins, Minerals & Iron</option>
+<option value="8-cardiac-investigations">8. Cardiac Investigations</option>
+<option value="9-cancer-screenings-tumor-markers">9. Cancer Screenings & Tumor Markers</option>
+<option value="10-whole-body-imaging">10. Whole-Body Imaging</option>
+<option value="11-urology-men-s-health">11. Urology & Men's Health</option>
+<option value="12-bone-health">12. Bone Health</option>
+<option value="13-neurology-cognition">13. Neurology & Cognition</option>
+<option value="14-eye-ear-dental">14. Eye, Ear & Dental</option>
+<option value="15-infectious-disease-immunity">15. Infectious Disease & Immunity</option>
+<option value="16-vaccination-review">16. Vaccination Review</option>
+<option value="17-conditional-tests-based-on-symptoms-history">17. Conditional Tests (Based on Symptoms / History)</option>
+<option value="18-geriatric-functional-assessments-highest-yield-most-missing">18. Geriatric & Functional Assessments (Highest-Yield, Most Missing)</option>
+<option value="19-specialist-consultations">19. Specialist Consultations</option>
+<option value="20-suggested-3-week-sequencing">20. Suggested 3-Week Sequencing</option>
+<option value="two-sentences-to-say-to-every-doctor">Two Sentences to Say to Every Doctor</option>
+      </select>
+    </div>
+
+    <div class="tests-layout">
+      <nav class="tests-toc" aria-label="Test categories">
+        <ol>
+<li><a href="#1-blood-count-clotting">1. Blood Count & Clotting</a></li>
+<li><a href="#2-diabetes-metabolic-health">2. Diabetes & Metabolic Health</a></li>
+<li><a href="#3-lipid-profile-advanced-cardiac-risk">3. Lipid Profile & Advanced Cardiac Risk</a></li>
+<li><a href="#4-kidney-renal-function">4. Kidney (Renal) Function</a></li>
+<li><a href="#5-liver-function">5. Liver Function</a></li>
+<li><a href="#6-thyroid-function">6. Thyroid Function</a></li>
+<li><a href="#7-vitamins-minerals-iron">7. Vitamins, Minerals & Iron</a></li>
+<li><a href="#8-cardiac-investigations">8. Cardiac Investigations</a></li>
+<li><a href="#9-cancer-screenings-tumor-markers">9. Cancer Screenings & Tumor Markers</a></li>
+<li><a href="#10-whole-body-imaging">10. Whole-Body Imaging</a></li>
+<li><a href="#11-urology-men-s-health">11. Urology & Men's Health</a></li>
+<li><a href="#12-bone-health">12. Bone Health</a></li>
+<li><a href="#13-neurology-cognition">13. Neurology & Cognition</a></li>
+<li><a href="#14-eye-ear-dental">14. Eye, Ear & Dental</a></li>
+<li><a href="#15-infectious-disease-immunity">15. Infectious Disease & Immunity</a></li>
+<li><a href="#16-vaccination-review">16. Vaccination Review</a></li>
+<li><a href="#17-conditional-tests-based-on-symptoms-history">17. Conditional Tests (Based on Symptoms / History)</a></li>
+<li><a href="#18-geriatric-functional-assessments-highest-yield-most-missing">18. Geriatric & Functional Assessments (Highest-Yield, Most Missing)</a></li>
+<li><a href="#19-specialist-consultations">19. Specialist Consultations</a></li>
+<li><a href="#20-suggested-3-week-sequencing">20. Suggested 3-Week Sequencing</a></li>
+<li><a href="#two-sentences-to-say-to-every-doctor">Two Sentences to Say to Every Doctor</a></li>
+        </ol>
+      </nav>
+      <div class="tests-content prose">
+<section class="test-sec" id="1-blood-count-clotting">
+<h2>1. Blood Count & Clotting</h2>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 17%"/>
+<col style="width: 19%"/>
+<col style="width: 18%"/>
+<col style="width: 19%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>What It Assesses</th>
+<th>Why Essential at 70+</th>
+<th>Symptoms / Red Flags if Abnormal</th>
+<th>Key Notes / Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>CBC with Differential</strong></td>
+<td>Red cells, white cells, platelets, hemoglobin, hematocrit</td>
+<td>Detects anemia, infections, blood disorders, and leukemia; fatigue from anemia is often dismissed as "just old age" in India</td>
+<td>Fatigue, weakness, pallor, frequent infections, easy bruising, shortness of breath</td>
+<td><strong>No fasting.</strong> Ask specifically for "CBC with differential," not just hemoglobin. Also ask for <strong>RBC indices (MCV/RDW)</strong> — high MCV → B12/folate deficiency; low MCV → iron deficiency. Iron-deficiency anemia in an elderly male = colon cancer until proven otherwise; insist on a cause workup, don't just give iron. Abnormal results may require a blood smear follow-up.</td>
+</tr>
+<tr class="even">
+<td><strong>ESR</strong></td>
+<td>Non-specific inflammation marker</td>
+<td>Screens for hidden infections, autoimmune disease, or cancer</td>
+<td>Persistent low-grade fever, unexplained weight loss, joint stiffness</td>
+<td>Non-specific; if elevated, doctor will order follow-up tests to find the cause. Ask for both ESR and hs-CRP, not just one.</td>
+</tr>
+<tr class="odd">
+<td><strong>Peripheral Blood Smear</strong></td>
+<td>Shape and size of blood cells</td>
+<td>Identifies abnormal cells, parasites (e.g., malaria in India), and megaloblastic anemia</td>
+<td>Same as CBC abnormalities</td>
+<td>Usually done <strong>only if CBC is abnormal</strong> — saves unnecessary cost. The lab physically looks at cells under a microscope for abnormalities.</td>
+</tr>
+<tr class="even">
+<td><strong>PT / INR &amp; aPTT</strong></td>
+<td>Blood clotting time</td>
+<td>Baseline before any procedure; essential if father is on or may need blood thinners</td>
+<td>Easy bruising, nosebleeds, blood in stool or urine, prolonged bleeding from cuts</td>
+<td>Tell doctor if he takes any blood-thinning medication or herbal supplements.</td>
+</tr>
+<tr class="odd">
+<td><strong>Hb Electrophoresis</strong></td>
+<td>Hemoglobin variants</td>
+<td>Rules out trait/disease like Thalassemia, which can cause unexplained mild anemia often confused with iron deficiency</td>
+<td>Mild, persistent fatigue</td>
+<td><strong>Crucial to do this before starting any iron supplements for anemia</strong> — taking iron blindly can be harmful in Thalassemia trait.</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+
+<section class="test-sec" id="2-diabetes-metabolic-health">
+<h2>2. Diabetes & Metabolic Health</h2>
+<div class="table-wrap"><table style="width:100%;">
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 24%"/>
+<col style="width: 12%"/>
+<col style="width: 17%"/>
+<col style="width: 15%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>What It Assesses</th>
+<th>Why Essential at 70+</th>
+<th>Symptoms / Red Flags if Abnormal</th>
+<th>Key Notes / Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Fasting Blood Glucose / Fasting Plasma Glucose (FPG)</strong></td>
+<td>Blood sugar after overnight fast</td>
+<td>Indians have very high genetic risk for Type 2 diabetes; many cases are silent</td>
+<td>Excessive thirst, frequent urination (especially at night), fatigue, blurred vision, slow-healing wounds, unexplained weight loss</td>
+<td><strong>10–12 hours fasting.</strong> Water allowed. Avoid alcohol the night before. Diagnostic cutoff ≥126 mg/dL (ICMR 2018). Needs 8–10 hr fast.</td>
+</tr>
+<tr class="even">
+<td><strong>Postprandial Blood Glucose (PPG)</strong></td>
+<td>Blood sugar 2 hours after a meal</td>
+<td>Catches diabetes missed by fasting alone; reflects real-world glucose control</td>
+<td>Same as fasting glucose abnormalities</td>
+<td>Often included in diabetes monitoring. If diabetic, this is checked alongside fasting glucose.</td>
+</tr>
+<tr class="odd">
+<td><strong>HbA1c</strong></td>
+<td>3-month average blood sugar</td>
+<td>Gold standard for diagnosing diabetes and measuring control; more reliable than single glucose reading</td>
+<td>Often <strong>completely asymptomatic</strong> in early stages</td>
+<td><strong>No fasting needed.</strong> Can be done any time of day. <span class="flag">⚠</span> <strong>Not the sole test in India</strong> — anemia and thalassemia trait can distort it. Pair with FPG at an NGSP/IFCC-certified lab.</td>
+</tr>
+<tr class="even">
+<td><strong>Fasting Insulin</strong></td>
+<td>Insulin level in blood</td>
+<td>Detects insulin resistance <strong>before</strong> diabetes develops; allows early lifestyle reversal</td>
+<td>Weight gain around abdomen, fatigue, sugar cravings</td>
+<td><strong>Fasting required.</strong> Often omitted from basic packages — ask specifically.</td>
+</tr>
+<tr class="odd">
+<td><strong>Urine Microalbumin/Creatinine Ratio (UACR / ACR)</strong></td>
+<td>Early kidney damage from diabetes/hypertension</td>
+<td>Diabetes is the #1 cause of kidney failure in India; this catches it when still reversible</td>
+<td>Foamy urine, swelling in legs/face</td>
+<td><strong>First-morning urine sample</strong> is best. ICMR mandates annual ACR in diabetics. Combine with eGFR for KDIGO staging.</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+
+<section class="test-sec" id="3-lipid-profile-advanced-cardiac-risk">
+<h2>3. Lipid Profile & Advanced Cardiac Risk</h2>
+<div class="table-wrap"><table style="width:100%;">
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 17%"/>
+<col style="width: 18%"/>
+<col style="width: 23%"/>
+<col style="width: 18%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>What It Assesses</th>
+<th>Why Essential at 70+</th>
+<th>Symptoms / Red Flags if Abnormal</th>
+<th>Key Notes / Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Lipid Profile</strong> (Total, LDL, HDL, Triglycerides, VLDL)</td>
+<td>Cholesterol and fat levels</td>
+<td>Heart disease is the leading cause of death; Indian phenotype typically shows high triglycerides + low HDL even at "normal" cholesterol</td>
+<td>Usually <strong>asymptomatic</strong> until a heart attack or stroke occurs</td>
+<td><strong>10–12 hours fasting.</strong> Avoid heavy fried foods and alcohol the night before. Indian LDL target is stricter (</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+
+<section class="test-sec" id="4-kidney-renal-function">
+<h2>4. Kidney (Renal) Function</h2>
+<div class="table-wrap"><table><thead><tr><th>Test</th><th>What It Assesses</th><th>Why Essential at 70+</th><th>Symptoms / Red Flags if Abnormal</th><th>Key Notes / Instructions</th></tr></thead>
+<colgroup>
+<col style="width: 16%"/>
+<col style="width: 15%"/>
+<col style="width: 33%"/>
+<col style="width: 14%"/>
+<col style="width: 20%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Cystatin C</strong></th>
+<th>True kidney filtration (no muscle-mass bias)</th>
+<th>Confirms/refutes borderline creatinine eGFR in sarcopenic elderly; gives far more accurate picture of true kidney health than creatinine alone</th>
+<th>Reflects true GFR</th>
+<th>Order alongside creatinine if eGFR borderline (45–75) or if frail. Fasting preferred.</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+</section>
+
+<section class="test-sec" id="5-liver-function">
+<h2>5. Liver Function</h2>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 16%"/>
+<col style="width: 18%"/>
+<col style="width: 23%"/>
+<col style="width: 19%"/>
+<col style="width: 22%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>What It Assesses</th>
+<th>Why Essential at 70+</th>
+<th>Symptoms / Red Flags if Abnormal</th>
+<th>Key Notes / Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>LFT Panel</strong> (AST, ALT, ALP, GGT, Bilirubin, Albumin, Total Protein)</td>
+<td>Liver cell health, bile flow, protein production</td>
+<td>Fatty liver (NAFLD) is extremely common in India due to diet and diabetes; detects hepatitis, medication toxicity; baseline before statins</td>
+<td>Jaundice (yellow eyes/skin), fatigue, abdominal swelling, dark urine, confusion</td>
+<td>Usually <strong>no fasting.</strong> Avoid alcohol for <strong>at least 3 days</strong> prior for accurate GGT. Tell doctor about all regular meds including OTC painkillers. Tie low albumin to nutrition assessment.</td>
+</tr>
+<tr class="even">
+<td><strong>Gamma-GT (GGT)</strong></td>
+<td>Bile duct and liver enzyme</td>
+<td>Sensitive marker of liver stress and alcohol consumption; often missed in basic panels</td>
+<td>Same as above</td>
+<td>Even moderate alcohol or certain medications can raise this.</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+
+<section class="test-sec" id="6-thyroid-function">
+<h2>6. Thyroid Function</h2>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 17%"/>
+<col style="width: 20%"/>
+<col style="width: 23%"/>
+<col style="width: 18%"/>
+<col style="width: 19%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>What It Assesses</th>
+<th>Why Essential at 70+</th>
+<th>Symptoms / Red Flags if Abnormal</th>
+<th>Key Notes / Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>TSH</strong></td>
+<td>Thyroid regulation</td>
+<td>Hypothyroidism is very common in elderly Indians; worsens cholesterol, depression, and cognition; often misdiagnosed as "just getting old"</td>
+<td>Weight gain, cold intolerance, depression, constipation, dry skin, hair loss, slowed thinking</td>
+<td><strong>Morning test preferred.</strong> Stop biotin supplements (hair/skin vitamins) 2 days before — they skew results. <span class="flag">⚠</span> <strong>Use age-adjusted ranges</strong> — upper limit ~6–7 mIU/L for &gt;70 (standard 0.4–4.5 over-diagnoses). Don't rush to treat mild elevations; repeat in 2–3 months.</td>
+</tr>
+<tr class="even">
+<td><strong>Free T3 &amp; Free T4</strong></td>
+<td>Active thyroid hormone levels</td>
+<td>Confirms diagnosis and severity if TSH is abnormal</td>
+<td>Same as above</td>
+<td>Usually done <strong>only if TSH is abnormal</strong> to control cost. Insist on Free T3 and Free T4 alongside TSH — TSH alone doesn't show how the body is converting active hormone.</td>
+</tr>
+<tr class="odd">
+<td><strong>Anti-TPO Antibodies</strong></td>
+<td>Autoimmune thyroiditis (Hashimoto's)</td>
+<td>Identifies autoimmune cause; very common in Indian population</td>
+<td>Same as above</td>
+<td>One-time test if TSH is abnormal.</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+
+<section class="test-sec" id="7-vitamins-minerals-iron">
+<h2>7. Vitamins, Minerals & Iron</h2>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 15%"/>
+<col style="width: 21%"/>
+<col style="width: 17%"/>
+<col style="width: 20%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>What It Assesses</th>
+<th>Why Essential at 70+</th>
+<th>Symptoms / Red Flags if Abnormal</th>
+<th>Key Notes / Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Vitamin D (25-OH)</strong></td>
+<td>Vitamin D storage</td>
+<td><strong>50–94% of Indians deficient</strong> despite sunlight; critical for bones, immunity, and falls prevention</td>
+<td>Bone pain, muscle weakness, frequent falls, low mood/depression</td>
+<td><strong>No fasting.</strong> Insist on <strong>25-hydroxyvitamin D</strong> (not 1,25-dihydroxy). Deficiency 30. Test before supplementing to avoid toxicity.</td>
+</tr>
+<tr class="even">
+<td><strong>Vitamin B12</strong></td>
+<td>Nerve and blood cell health</td>
+<td><strong>42–62% of Indian elderly deficient.</strong> Causes reversible dementia, neuropathy, anemia, and falls — one of the most treatable findings</td>
+<td>Numbness/tingling in hands/feet, memory problems, fatigue, anemia, difficulty walking, glossitis</td>
+<td>Fasting preferred. <span class="flag">⚠</span> Routine serum B12 often inaccurate. Ask for <strong>Active B12 (Holotranscobalamin)</strong> or <strong>MMA (methylmalonic acid)</strong> if borderline (150–300 pg/mL) — more sensitive.</td>
+</tr>
+<tr class="odd">
+<td><strong>Folate (Vitamin B9)</strong></td>
+<td>DNA synthesis and cell division</td>
+<td>Often co-deficient with B12; both cause macrocytic anemia</td>
+<td>Same as B12 + sore tongue, mouth ulcers</td>
+<td>Usually tested alongside B12. <strong>Interpret with B12</strong> — treating folate alone while B12 is low can worsen neurological damage.</td>
+</tr>
+<tr class="even">
+<td><strong>Iron Studies</strong> (Serum Iron, TIBC, Ferritin, Transferrin Saturation)</td>
+<td>Iron storage and transport</td>
+<td>Distinguishes true iron deficiency from anemia of chronic disease; iron-deficiency anemia in elderly male mandates GI-bleed/cancer search</td>
+<td>Fatigue, pallor, brittle nails, craving ice or starch (pica)</td>
+<td><strong>Morning fasting preferred.</strong> Ferritin is an acute-phase reactant — interpret with CRP. Fasting morning ideal.</td>
+</tr>
+<tr class="odd">
+<td><strong>Serum Calcium (Albumin-Corrected)</strong></td>
+<td>Calcium level</td>
+<td>Bone health, nerve signaling, heart rhythm; ties into bone/vitamin D axis</td>
+<td>Muscle cramps, numbness, irregular heartbeat, osteoporosis</td>
+<td>Ask for <strong>albumin-corrected calcium</strong>. If abnormal, add <strong>PTH</strong>.</td>
+</tr>
+<tr class="even">
+<td><strong>Serum Magnesium</strong></td>
+<td>Magnesium level</td>
+<td>Frequently deficient and rarely tested; critical for heart rhythm, blood pressure, and bone density</td>
+<td>Muscle cramps, tremors, irregular heartbeat, anxiety, constipation</td>
+<td><strong>Often omitted from basic packages — ask specifically.</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>Serum Phosphorus</strong></td>
+<td>Phosphorus level</td>
+<td>Kidney and bone metabolism</td>
+<td>Weakness, bone pain, itching</td>
+<td>Usually part of basic metabolic panel.</td>
+</tr>
+<tr class="even">
+<td><strong>PTH (Parathyroid Hormone)</strong></td>
+<td>Parathyroid/calcium disorders</td>
+<td>Ordered only if calcium or vitamin D abnormal; high → bone loss, fractures, kidney stones</td>
+<td>Bone pain, fractures, stones, fatigue</td>
+<td>Pair with corrected calcium + 25(OH)D.</td>
+</tr>
+<tr class="odd">
+<td><strong>Testosterone (Total, Morning)</strong></td>
+<td>Male hormone levels</td>
+<td>Low testosterone is underdiagnosed in elderly men; contributes to fatigue, low mood, muscle loss, osteoporosis</td>
+<td>Low energy, depression, reduced muscle mass, low libido, cognitive fog, anemia</td>
+<td><strong>Morning sample (8–10 AM)</strong>, fasting. Optional/symptom-driven only — not for "anti-ageing." Many medications affect this.</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+
+<section class="test-sec" id="8-cardiac-investigations">
+<h2>8. Cardiac Investigations</h2>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 20%"/>
+<col style="width: 15%"/>
+<col style="width: 24%"/>
+<col style="width: 18%"/>
+<col style="width: 20%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>What It Assesses</th>
+<th>Why Essential at 70+</th>
+<th>Symptoms / Red Flags if Abnormal</th>
+<th>Key Notes / Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Blood Pressure</strong> — seated, both arms, repeat; home/ambulatory</td>
+<td>Hypertension</td>
+<td><strong>#1 modifiable stroke/heart-failure risk</strong> in this age group; often completely silent</td>
+<td>Usually none; occasional headache, dizziness at extremes</td>
+<td>USPSTF Grade A. Check <strong>orthostatic BP</strong> (lying + standing at 1 &amp; 3 min) — major reversible fall cause. Consider 24-hr ambulatory BP for white-coat/masked HTN. Get checked at more than one visit.</td>
+</tr>
+<tr class="even">
+<td><strong>Resting ECG</strong></td>
+<td>Heart rhythm, electrical activity, evidence of past silent heart attack</td>
+<td>Baseline screening; "silent" heart attacks and atrial fibrillation are common in elderly diabetics</td>
+<td>Palpitations, breathlessness, dizziness, unexplained fatigue</td>
+<td><strong>Non-invasive; 5 minutes.</strong> No prep. Quick, cheap, valuable baseline.</td>
+</tr>
+<tr class="odd">
+<td><strong>2D Echocardiogram</strong></td>
+<td>Heart pumping strength (EF%), valve function, chamber size, diastolic function</td>
+<td>Detects heart failure (especially HFpEF in elderly/hypertensives) and valve disease (aortic stenosis is common in elderly)</td>
+<td>Breathlessness on walking, leg swelling, fatigue, waking up breathless</td>
+<td><strong>Ultrasound; no preparation.</strong> Ask specifically to assess <strong>diastolic function + aortic valve</strong>.</td>
+</tr>
+<tr class="even">
+<td><strong>TMT / Stress Test</strong> (or Stress Echo)</td>
+<td>Heart performance under physical stress</td>
+<td>Detects blocked coronary arteries not visible at rest</td>
+<td>Chest tightness on climbing stairs or walking, breathlessness on exertion</td>
+<td><span class="flag">⚠</span> <strong>Only if symptomatic or intermediate risk — NOT a blind screen.</strong> Avoid if severe knee/hip arthritis; a <strong>pharmacological stress test</strong> can be done instead if mobility is limited.</td>
+</tr>
+<tr class="odd">
+<td><strong>Coronary Artery Calcium (CAC) Score — CT</strong></td>
+<td>Calcified plaque burden in heart arteries</td>
+<td>Refines CV risk; 0 = reassuring, high = reclassifies risk upward</td>
+<td>None by design</td>
+<td>Extra cost, low radiation. Less discriminating at advanced age (most 74-year-olds have some calcium). Discuss value with cardiologist, especially if family history of heart disease.</td>
+</tr>
+<tr class="even">
+<td><strong>Carotid Intima-Media Thickness (CIMT)</strong></td>
+<td>Thickness of inner carotid artery layers</td>
+<td>Visualizes arterial plaque; direct window into stroke risk</td>
+<td>Dizziness, TIA symptoms (temporary vision loss, slurred speech, one-sided numbness)</td>
+<td>Radiation-free ultrasound add-on if any cardiac risk.</td>
+</tr>
+<tr class="odd">
+<td><strong>hs-CRP</strong></td>
+<td>Low-grade artery inflammation</td>
+<td>Predicts heart attack risk independent of cholesterol; elevated = higher vascular risk</td>
+<td>Usually asymptomatic</td>
+<td><strong>No fasting.</strong> Will be temporarily elevated by any active infection — inform doctor if he has a cold. Order <strong>hs-CRP (cardiac-specific)</strong>, not regular CRP. Target</td>
+</tr>
+<tr class="even">
+<td><strong>Homocysteine</strong></td>
+<td>Amino acid toxic to blood vessels; B12/folate status</td>
+<td>Independent risk factor for heart attack, stroke, and dementia; often missed</td>
+<td>Usually asymptomatic; brain fog, neuropathy, fatigue</td>
+<td>Fasting preferred; can often be lowered with B-vitamin supplementation. Target</td>
+</tr>
+<tr class="odd">
+<td><strong>NT-proBNP / BNP</strong></td>
+<td>Heart failure strain marker</td>
+<td>Detects early heart failure before obvious symptoms develop</td>
+<td>Breathlessness, leg swelling, fatigue</td>
+<td>Usually ordered if there are symptoms or risk factors.</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+
+<section class="test-sec" id="9-cancer-screenings-tumor-markers">
+<h2>9. Cancer Screenings & Tumor Markers</h2>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 23%"/>
+<col style="width: 18%"/>
+<col style="width: 18%"/>
+<col style="width: 18%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>What It Assesses</th>
+<th>Why Essential at 70+</th>
+<th>Symptoms / Red Flags if Abnormal</th>
+<th>Key Notes / Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>PSA — Total &amp; Free/Total Ratio</strong></td>
+<td>Prostate cancer screening</td>
+<td>Prostate cancer is one of the most common cancers in Indian men; early detection is curable</td>
+<td>Frequent urination, weak urine stream, blood in urine, pelvic discomfort</td>
+<td><span class="flag">⚠</span> <strong>Controversial — discuss with urologist.</strong> Use <strong>age-adjusted cutoff (≤6.5 ng/mL for 70s, not 4.0).</strong> If total 4–10 (gray zone), order <strong>Free/Total ratio</strong> — ≤0.10 → ~65% cancer risk; &gt;0.25 → ~16%. Do <strong>DRE</strong> too. Avoid ejaculation for <strong>48 hours</strong> before test; DRE done just before can slightly raise PSA.</td>
+</tr>
+<tr class="even">
+<td><strong>Digital Rectal Exam (DRE)</strong></td>
+<td>Physical prostate examination</td>
+<td>Detects nodules or hard areas that PSA blood test misses</td>
+<td>Same as above</td>
+<td>Uncomfortable but essential; should be done <strong>in addition to</strong> PSA, not instead of it.</td>
+</tr>
+<tr class="odd">
+<td><strong>Colonoscopy</strong></td>
+<td>Direct visualization of colon and rectum</td>
+<td>Gold standard for colon cancer screening; colorectal cancer rates are rising in India</td>
+<td>Blood in stool, change in bowel habits, unexplained anemia, abdominal pain</td>
+<td>Requires <strong>1-day bowel prep</strong> (clear liquids + laxative); sedation is used. If normal, typically repeated every 10 years. If never screened and fit for prep, this is probably the single most valuable test on the list.</td>
+</tr>
+<tr class="even">
+<td><strong>Fecal Immunochemical Test (FIT)</strong></td>
+<td>Hidden blood in stool</td>
+<td>Less invasive screening alternative to colonoscopy</td>
+<td>Same as above</td>
+<td><strong>No dietary restrictions.</strong> Do annually if colonoscopy is declined or unavailable. A positive result means colonoscopy is mandatory.</td>
+</tr>
+<tr class="odd">
+<td><strong>Upper GI Endoscopy</strong></td>
+<td>Stomach/esophagus lining</td>
+<td>Catches ulcers, H. pylori, early stomach cancer — more common in India than the West</td>
+<td>Persistent indigestion, trouble swallowing, weight loss</td>
+<td>Do it same-day as colonoscopy if he's already being sedated — saves a trip.</td>
+</tr>
+<tr class="even">
+<td><strong>Oral Cavity Examination</strong></td>
+<td>Oral/oropharyngeal cancer</td>
+<td><strong>India = world's highest oral cancer burden</strong> (tobacco/betel-nut/gutka/paan)</td>
+<td>White/red patches, non-healing ulcers (&gt;2 weeks), lumps, swallowing difficulty</td>
+<td>Visual + palpation by dentist/ENT. High yield if any tobacco/areca-nut use.</td>
+</tr>
+<tr class="odd">
+<td><strong>Dermatology Skin Exam</strong></td>
+<td>Full-body mole and lesion check</td>
+<td>Skin cancers become more common with age; early melanoma is treatable</td>
+<td>New or changing moles, non-healing sores, irregular borders or color</td>
+<td>10–15 minute dermatologist check. Easy to slot in.</td>
+</tr>
+<tr class="even">
+<td><strong>CEA</strong></td>
+<td>Marker for colorectal cancer</td>
+<td>Used mainly for monitoring after treatment, not for primary screening</td>
+<td>Same as above</td>
+<td>Can be elevated in smokers; not a standalone diagnostic test.</td>
+</tr>
+<tr class="odd">
+<td><strong>Chest X-Ray</strong></td>
+<td>Lung masses, infections, heart enlargement</td>
+<td>Baseline check; India has high TB burden</td>
+<td>Persistent cough, breathlessness, weight loss</td>
+<td>Low radiation; good baseline. Consider if cough, weight loss, night sweats, diabetes, or pre-procedure baseline.</td>
+</tr>
+<tr class="even">
+<td><strong>Low-Dose CT Chest (LDCT)</strong></td>
+<td>Detailed lung imaging</td>
+<td>Far more sensitive than X-ray for early lung cancer detection</td>
+<td>Same as above</td>
+<td>Recommended for <strong>heavy smokers</strong> (50–80 years, ≥20 pack-years, current or quit</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+
+<section class="test-sec" id="10-whole-body-imaging">
+<h2>10. Whole-Body Imaging</h2>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 19%"/>
+<col style="width: 16%"/>
+<col style="width: 18%"/>
+<col style="width: 20%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>What It Assesses</th>
+<th>Why Essential at 70+</th>
+<th>Symptoms / Red Flags if Abnormal</th>
+<th>Key Notes / Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ultrasound — Whole Abdomen &amp; Pelvis</strong></td>
+<td>Liver, gallbladder, pancreas, kidneys, spleen, prostate, bladder, aorta</td>
+<td>Non-invasive way to spot fatty liver, gallstones, kidney stones/cysts, enlarged prostate, abdominal aortic aneurysm</td>
+<td>Abdominal pain, bloating, urinary difficulty, back pain</td>
+<td><strong>Fasting 6–8 hours</strong> required for upper abdomen imaging. Full bladder needed for prostate view. Specify: <strong>include abdominal aorta diameter</strong> (AAA screen) + <strong>post-void residual urine</strong> + <strong>prostate volume</strong>.</td>
+</tr>
+<tr class="even">
+<td><strong>CT Coronary Angiography (CTCA)</strong></td>
+<td>Calcium and plaque in heart arteries</td>
+<td>Non-invasive alternative to invasive catheter angiography for selected high-risk patients</td>
+<td>Chest pain, breathlessness on exertion</td>
+<td>Requires <strong>iodine contrast dye</strong> — kidney function (creatinine/eGFR) must be checked first. Not suitable for everyone.</td>
+</tr>
+<tr class="odd">
+<td><strong>Carotid Doppler</strong></td>
+<td>Blood flow in neck arteries to brain</td>
+<td>Detects plaque and narrowing that causes strokes</td>
+<td>Transient vision loss, dizziness, one-sided weakness or numbness</td>
+<td>Non-invasive ultrasound; no preparation.</td>
+</tr>
+<tr class="even">
+<td><strong>Ankle-Brachial Index (ABI)</strong></td>
+<td>Blood pressure comparison arm vs. ankle</td>
+<td>Screens for peripheral artery disease (blocked leg arteries) — common in diabetics and smokers</td>
+<td>Leg pain when walking that stops with rest, non-healing foot wounds, cold feet</td>
+<td>Simple, non-invasive; highly underutilized.</td>
+</tr>
+<tr class="odd">
+<td><strong>Abdominal Aortic Aneurysm (AAA) Ultrasound</strong></td>
+<td>Aortic aneurysm</td>
+<td><span class="flag">⚠</span> <strong>USPSTF Grade B: one-time for men 65–75 who ever smoked</strong> (≥100 cigarettes). Silent and lethal if ruptures</td>
+<td>Usually silent; pulsatile abdominal mass; rupture = catastrophic</td>
+<td><strong>One-time only.</strong> Can be bundled into abdominal ultrasound. Establish smoking history first.</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+
+<section class="test-sec" id="11-urology-men-s-health">
+<h2>11. Urology & Men's Health</h2>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 17%"/>
+<col style="width: 12%"/>
+<col style="width: 18%"/>
+<col style="width: 13%"/>
+<col style="width: 37%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>What It Assesses</th>
+<th>Why Essential at 70+</th>
+<th>Symptoms / Red Flags if Abnormal</th>
+<th>Key Notes / Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Urinalysis (Routine &amp; Microscopy)</strong></td>
+<td>Infection, blood, protein, sugar in urine</td>
+<td>UTIs in elderly men are often silent but can lead to kidney infection; also screens for kidney disease and diabetes</td>
+<td>Burning urination, frequency, urgency, cloudy or foul-smelling urine</td>
+<td><strong>First morning, mid-stream sample</strong> is most accurate. Persistent microscopic hematuria in elderly male → urology referral (bladder cancer).</td>
+</tr>
+<tr class="even">
+<td><strong>Urine Culture &amp; Sensitivity</strong></td>
+<td>Specific bacteria causing infection</td>
+<td>Identifies exact organism and correct antibiotic (critical with rising antibiotic resistance in India)</td>
+<td>Same as above</td>
+<td>Takes <strong>48–72 hours.</strong> Do this if urinalysis suggests infection.</td>
+</tr>
+<tr class="odd">
+<td><strong>Serum Testosterone (Total &amp; Free, Morning)</strong></td>
+<td>Male hormone levels</td>
+<td>Low testosterone is underdiagnosed in elderly men; causes fatigue, depression, bone loss, and low quality of life</td>
+<td>Low energy, depression, reduced muscle mass, low libido, cognitive fog</td>
+<td><strong>Morning sample (8–10 AM)</strong> is most accurate. Many medications affect this. Optional/symptom-driven only.</td>
+</tr>
+<tr class="even">
+<td><strong>Post-Void Residual (PVR)</strong></td>
+<td>Urine left in bladder after urinating</td>
+<td>Detects enlarged prostate obstruction or weak bladder muscle</td>
+<td>Weak stream, dribbling, feeling of incomplete emptying, frequent night urination</td>
+<td>Non-invasive bladder scan; often done with urologist.</td>
+</tr>
+<tr class="odd">
+<td><strong>IPSS Questionnaire + Uroflowmetry</strong></td>
+<td>Prostate outflow obstruction (BPH)</td>
+<td>BPH near-universal at this age; affects quality of life, can cause retention/kidney damage</td>
+<td>Weak stream, frequency, nocturia, incomplete emptying</td>
+<td>Complete IPSS before urology visit. Note: nocturia may be sleep apnea/diabetes/edema/diuretics, not just prostate.</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+
+<section class="test-sec" id="12-bone-health">
+<h2>12. Bone Health</h2>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 19%"/>
+<col style="width: 17%"/>
+<col style="width: 18%"/>
+<col style="width: 15%"/>
+<col style="width: 28%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>What It Assesses</th>
+<th>Why Essential at 70+</th>
+<th>Symptoms / Red Flags if Abnormal</th>
+<th>Key Notes / Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>DEXA Scan</strong> (Bone Mineral Density, hip + lumbar spine)</td>
+<td>Bone density and osteoporosis risk</td>
+<td>Men also get osteoporosis; a hip fracture in a 70+ man has very high mortality and disability risk</td>
+<td>Back pain, height loss, stooped posture, fractures from minor falls</td>
+<td>Low radiation; takes ~15 minutes. <strong>Central DEXA (hip + spine), not peripheral.</strong> Bring any prior DEXA report for comparison. T-score ≤−2.5 = osteoporosis. If spine reading artifactually high from arthritis, ask about <strong>QCT</strong> or hip-priority read.</td>
+</tr>
+<tr class="even">
+<td><strong>Serum Calcium, Phosphorus, ALP</strong></td>
+<td>Bone metabolism markers</td>
+<td>Supports DEXA interpretation and detects metabolic bone disorders</td>
+<td>Bone pain, fractures, deformities</td>
+<td>ALP is part of LFT; calcium/phosphorus usually in basic panel.</td>
+</tr>
+<tr class="odd">
+<td><strong>Vertebral Fracture Assessment (VFA) or Lateral Spine X-ray</strong></td>
+<td>Silent spinal compression fractures</td>
+<td>Catches fractures DEXA misses</td>
+<td>Height loss &gt;3–4 cm, kyphosis, chronic back pain</td>
+<td>Add if height loss, chronic back pain, steroid use, or low BMD.</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+
+<section class="test-sec" id="13-neurology-cognition">
+<h2>13. Neurology & Cognition</h2>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 15%"/>
+<col style="width: 13%"/>
+<col style="width: 27%"/>
+<col style="width: 24%"/>
+<col style="width: 18%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>What It Assesses</th>
+<th>Why Essential at 70+</th>
+<th>Symptoms / Red Flags if Abnormal</th>
+<th>Key Notes / Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>MoCA or MMSE</strong></td>
+<td>Memory, attention, language, executive function</td>
+<td>Screens for early dementia/Alzheimer's; early intervention and medication work best when started early; reversible causes (B12, thyroid, depression) must be ruled out first</td>
+<td>Forgetfulness, getting lost in familiar places, difficulty managing money/medications, repeating questions</td>
+<td><strong>MoCA more sensitive than MMSE</strong> for mild impairment. Administer in his language. 10-minute questionnaire; should be done <strong>annually</strong> in this age group.</td>
+</tr>
+<tr class="even">
+<td><strong>Depression Screening (PHQ-9 or GDS-15)</strong></td>
+<td>Mood and depressive symptoms</td>
+<td>Common and under-reported in Indian men; presents as pain/fatigue/irritability, not sadness; compounded by recent widowerhood</td>
+<td>Low energy, loss of interest in usual activities, sleep changes, withdrawal, hopelessness</td>
+<td><span class="flag">⚠</span> <strong>Especially important — he recently lost his wife.</strong> Grief &amp; depression overlap. Ask privately about suicidal thoughts. Worth flagging the recent loss to whoever does this.</td>
+</tr>
+<tr class="odd">
+<td><strong>Carotid Doppler</strong></td>
+<td>Arterial blood flow to brain</td>
+<td>Stroke prevention screening</td>
+<td>Transient weakness, vision loss, slurred speech</td>
+<td>See Whole-Body Imaging above.</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+
+<section class="test-sec" id="14-eye-ear-dental">
+<h2>14. Eye, Ear & Dental</h2>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 23%"/>
+<col style="width: 17%"/>
+<col style="width: 16%"/>
+<col style="width: 20%"/>
+<col style="width: 21%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>What It Assesses</th>
+<th>Why Essential at 70+</th>
+<th>Symptoms / Red Flags if Abnormal</th>
+<th>Key Notes / Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Comprehensive Eye Exam</strong> (Visual Acuity, IOP, Slit Lamp, Dilated Fundus)</td>
+<td>Vision, glaucoma, cataracts, diabetic retinopathy, macular degeneration</td>
+<td>Vision loss = major cause of falls &amp; cognitive decline; glaucoma silent until late</td>
+<td>Blurred vision, halos around lights, difficulty reading, frequent falls, bumping into objects</td>
+<td><strong>Pupil dilation is required</strong> — bring sunglasses and do not drive afterward. Include <strong>dilated fundoscopy</strong> (ICMR mandates annual in diabetics) + <strong>tonometry</strong> (glaucoma) + cataract assessment. AAO recommends every 1–2 years ≥65.</td>
+</tr>
+<tr class="even">
+<td><strong>Tonometry</strong> (Intraocular Pressure)</td>
+<td>Pressure inside the eye</td>
+<td>Screens for glaucoma</td>
+<td>Peripheral vision loss (often unnoticed by patient until severe)</td>
+<td>Part of comprehensive eye exam.</td>
+</tr>
+<tr class="odd">
+<td><strong>Audiometry</strong> (Hearing Test)</td>
+<td>Hearing across frequencies</td>
+<td>Hearing loss leads to social isolation, depression, and <strong>accelerated cognitive decline</strong></td>
+<td>Asking people to repeat, TV volume very high, missing phone calls/doorbells, social withdrawal, tinnitus</td>
+<td>Non-invasive; ~15–20 minutes. Pure-tone audiometry in soundproof booth (whisper tests insufficient). Correcting hearing = high-impact dementia-risk reduction. Check/remove cerumen first.</td>
+</tr>
+<tr class="even">
+<td><strong>Dental Checkup + Panoramic X-Ray</strong></td>
+<td>Oral health, gum disease, oral cancer</td>
+<td>Poor dental health is linked to heart disease and diabetes; oral cancer risk rises with age and tobacco use; poor dentition → malnutrition</td>
+<td>Bleeding gums, loose teeth, mouth sores, difficulty chewing, chronic bad breath</td>
+<td>Often neglected but critical. Combine with oral-cancer visual exam. Essential before bisphosphonate therapy for osteoporosis.</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+
+<section class="test-sec" id="15-infectious-disease-immunity">
+<h2>15. Infectious Disease & Immunity</h2>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 18%"/>
+<col style="width: 18%"/>
+<col style="width: 18%"/>
+<col style="width: 23%"/>
+<col style="width: 21%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>What It Assesses</th>
+<th>Why Essential at 70+</th>
+<th>Symptoms / Red Flags if Abnormal</th>
+<th>Key Notes / Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>HBsAg + Full Hepatitis B Panel</strong> (anti-HBs, anti-HBc)</td>
+<td>Active Hepatitis B infection and immunity</td>
+<td>India has intermediate prevalence; chronic infection leads to cirrhosis and liver cancer</td>
+<td>Fatigue, jaundice, abdominal pain, swelling</td>
+<td>If negative and not immune, discuss Hepatitis B vaccination. Complete HBV panel, not HBsAg alone.</td>
+</tr>
+<tr class="even">
+<td><strong>Anti-HCV (with reflex HCV RNA if positive)</strong></td>
+<td>Hepatitis C exposure</td>
+<td>Curable if detected early; often silent for decades before destroying the liver</td>
+<td>Usually <strong>asymptomatic</strong> for years</td>
+<td>If antibody positive, requires <strong>HCV RNA confirmatory test.</strong> WHO recommends one-time HCV screening for adults.</td>
+</tr>
+<tr class="odd">
+<td><strong>HIV 1 &amp; 2</strong></td>
+<td>HIV infection</td>
+<td>Baseline screening; important if any history of blood transfusions</td>
+<td>Frequent infections, weight loss, night sweats, persistent diarrhea</td>
+<td>Confidential testing is standard at all major hospitals.</td>
+</tr>
+<tr class="even">
+<td><strong>TB Screening</strong> (IGRA / Quantiferon preferred; symptom screen ± CXR ± sputum NAAT)</td>
+<td>Latent or active tuberculosis</td>
+<td>TB is endemic in India; reactivation risk increases with age and diabetes (diabetes doubles TB risk)</td>
+<td>Cough &gt;3 weeks, weight loss, night sweats, low-grade fever</td>
+<td><strong>IGRA blood test</strong> is preferred over skin test (Mantoux) because most Indians received BCG vaccine, which causes false-positive skin tests. Do NOT use IGRA/TST to screen for active TB — high clinical suspicion if cough &gt;2 weeks, weight loss, fever.</td>
+</tr>
+<tr class="odd">
+<td><strong>H. pylori Testing</strong> (stool antigen or urea breath test)</td>
+<td>Gastric infection</td>
+<td>Very prevalent in India; causes B12 deficiency, dyspepsia, ulcers, gastric cancer risk</td>
+<td>Chronic acidity, bloating, ulcer history</td>
+<td>Consider given B12-deficiency link and any dyspepsia. Non-invasive.</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+
+<section class="test-sec" id="16-vaccination-review">
+<h2>16. Vaccination Review</h2>
+<p>Ask the physician to verify vaccination records and administer any missing doses. This is preventive medicine, not a "test," but it belongs on the same checklist.</p><div class="table-wrap"><table>
+<colgroup>
+<col style="width: 26%"/>
+<col style="width: 25%"/>
+<col style="width: 23%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Vaccine</th>
+<th>What It Prevents</th>
+<th>Why Essential at 70+</th>
+<th>Key Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Pneumococcal (PCV20 or PCV15 + PPSV23)</strong></td>
+<td>Pneumonia, meningitis, bloodstream infections</td>
+<td>Leading cause of hospitalization and death in elderly Indians</td>
+<td>Ask which schedule applies; often one dose of PCV20 is sufficient at this age.</td>
+</tr>
+<tr class="even">
+<td><strong>Influenza (Annual)</strong></td>
+<td>Seasonal flu</td>
+<td>Flu can be fatal in elderly; strains change yearly</td>
+<td>Take every year. A <strong>high-dose</strong> version is specifically made for adults 65+.</td>
+</tr>
+<tr class="odd">
+<td><strong>Tdap (Tetanus, Diphtheria, Pertussis)</strong></td>
+<td>Tetanus and whooping cough</td>
+<td>Booster every 10 years; pertussis protection also protects grandchildren</td>
+<td>One Tdap in adulthood, then Td every 10 years.</td>
+</tr>
+<tr class="even">
+<td><strong>Shingles (Shingrix)</strong></td>
+<td>Shingles and post-herpetic neuralgia</td>
+<td>Risk rises dramatically with age; pain can be debilitating and last for months/years</td>
+<td><strong>Two doses</strong> 2–6 months apart. Recommended even if he had shingles before.</td>
+</tr>
+<tr class="odd">
+<td><strong>Hepatitis B</strong></td>
+<td>Liver infection/cancer</td>
+<td>If blood test shows no immunity</td>
+<td>Usually 2-dose series (Heplisav-B) or 3-dose depending on brand.</td>
+</tr>
+<tr class="even">
+<td><strong>COVID-19</strong></td>
+<td>COVID-19</td>
+<td>Elderly are highest-risk group for severe outcomes</td>
+<td>Keep up to date with current boosters as recommended.</td>
+</tr>
+<tr class="odd">
+<td><strong>RSV</strong></td>
+<td>Respiratory syncytial virus</td>
+<td>Newly available for adults 60+; discuss with doctor</td>
+<td>Shared clinical decision-making based on risk.</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+
+<section class="test-sec" id="17-conditional-tests-based-on-symptoms-history">
+<h2>17. Conditional Tests (Based on Symptoms / History)</h2>
+<p>These are not for everyone, but should be discussed with the doctor if there are specific risk factors, symptoms, or family history.</p><div class="table-wrap"><table>
+<colgroup>
+<col style="width: 35%"/>
+<col style="width: 25%"/>
+<col style="width: 39%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test / Investigation</th>
+<th>When to Consider It</th>
+<th>What It Assesses</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Stool Routine / Occult Blood</strong></td>
+<td>Persistent bowel complaints, anemia, or as alternative to colonoscopy</td>
+<td>Parasites, infection, hidden blood</td>
+</tr>
+<tr class="even">
+<td><strong>Rheumatoid Factor (RF) &amp; Anti-CCP</strong></td>
+<td>Joint pain, morning stiffness, swelling</td>
+<td>Rheumatoid arthritis</td>
+</tr>
+<tr class="odd">
+<td><strong>ANA (Antinuclear Antibody)</strong></td>
+<td>Unexplained rashes, joint pain, sun sensitivity, fatigue</td>
+<td>Autoimmune disorders (lupus, etc.)</td>
+</tr>
+<tr class="even">
+<td><strong>Spirometry / PFT</strong></td>
+<td>History of smoking, chronic cough, breathlessness</td>
+<td>COPD, asthma, reduced lung function</td>
+</tr>
+<tr class="odd">
+<td><strong>Sleep Study (Polysomnography) or STOP-BANG Questionnaire</strong></td>
+<td>Loud snoring, daytime sleepiness, morning headaches</td>
+<td>Sleep apnea — linked to hypertension and heart disease. If high suspicion, do polysomnography/home sleep study (questionnaires alone don't diagnose).</td>
+</tr>
+<tr class="even">
+<td><strong>Holter Monitoring (24–48 hr)</strong></td>
+<td>Palpitations, unexplained fainting, irregular heartbeat on ECG</td>
+<td>Intermittent arrhythmias</td>
+</tr>
+<tr class="odd">
+<td><strong>Monofilament Test</strong></td>
+<td>Diabetes present</td>
+<td>Peripheral neuropathy (nerve damage in feet)</td>
+</tr>
+<tr class="even">
+<td><strong>Skin Examination</strong></td>
+<td>New or changing moles, non-healing sores, history of significant sun exposure</td>
+<td>Skin cancer (less common in Indian skin but not zero)</td>
+</tr>
+<tr class="odd">
+<td><strong>Amylase / Lipase</strong></td>
+<td>Unexplained weight loss, oily/greasy stools, upper abdominal pain radiating to back</td>
+<td>Chronic pancreatitis</td>
+</tr>
+<tr class="even">
+<td><strong>Serum Protein Electrophoresis (SPEP)</strong></td>
+<td>Persistent bone pain (especially back), unexplained anemia, frequent infections, kidney issues, high calcium</td>
+<td>Multiple Myeloma and related disorders — peak incidence in the 70s. Essential if any unexplained anemia or bone pain.</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+
+<section class="test-sec" id="18-geriatric-functional-assessments-highest-yield-most-missing">
+<h2>18. Geriatric & Functional Assessments (Highest-Yield, Most Missing)</h2>
+<p>A Comprehensive Geriatric Assessment (CGA) predicts disability, hospitalization, and death better than any single lab. Request a geriatric-medicine consult if available.</p><div class="table-wrap"><table>
+<colgroup>
+<col style="width: 19%"/>
+<col style="width: 21%"/>
+<col style="width: 21%"/>
+<col style="width: 20%"/>
+<col style="width: 15%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test / Assessment</th>
+<th>What It Assesses</th>
+<th>Why Essential at 70+</th>
+<th>Symptoms / Red Flags if Abnormal</th>
+<th>Key Notes / Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Blood Pressure — Orthostatic</strong> (lying + standing at 1 &amp; 3 min)</td>
+<td>Drop in BP on standing</td>
+<td>Major reversible fall contributor; often medication-driven (alpha-blockers, diuretics, antihypertensives, sedatives)</td>
+<td>Lightheadedness, blackouts, falls</td>
+<td>Measure lying/seated, then standing at 1 &amp; 3 minutes. Review medications that may be causing this.</td>
+</tr>
+<tr class="even">
+<td><strong>BMI + Waist Circumference</strong></td>
+<td>Obesity / metabolic risk (and low weight/sarcopenia)</td>
+<td>Asians have higher body-fat/cardiometabolic risk at lower BMI — use <strong>Asian cutoffs</strong> (overweight ≥23, obese ≥25 kg/m²)</td>
+<td>High: metabolic risk. Low/falling: frailty, cancer, TB</td>
+<td><strong>Waist &gt;90 cm (men) = central obesity</strong> (matters more than BMI in Indians). Track unintentional weight loss.</td>
+</tr>
+<tr class="odd">
+<td><strong>Fall Risk — Timed Up-and-Go (TUG) + Gait/Balance</strong></td>
+<td>Fall/fracture risk</td>
+<td>Falls = leading cause of death and independence loss in elderly; often preventable</td>
+<td>Slow/unsteady gait, prior falls, fear of falling, holding furniture</td>
+<td><strong>TUG &gt;12–13 sec = high fall risk.</strong> Combine with vision, orthostatic BP, med review, home-hazard advice, vitamin D.</td>
+</tr>
+<tr class="even">
+<td><strong>Frailty — Fried Phenotype / Clinical Frailty Scale + Grip Strength</strong></td>
+<td>Frailty syndrome</td>
+<td>Predicts adverse outcomes; <strong>changes how aggressively to screen/treat everything else</strong></td>
+<td>Weight loss, exhaustion, weakness (low grip), slow walking, low activity</td>
+<td>A frail phenotype argues <em>against</em> aggressive cancer screening &amp; <em>for</em> focusing on function. This is the lens for all other results. EWGSOP2 cutoffs: grip</td>
+</tr>
+<tr class="odd">
+<td><strong>Nutrition — Mini Nutritional Assessment (MNA)</strong></td>
+<td>Malnutrition / sarcopenia risk</td>
+<td>Widowed, possibly eating poorly alone; malnutrition drives frailty, poor immunity, falls</td>
+<td>Weight loss, low BMI, low albumin, poor intake</td>
+<td>Tie to serum albumin and weight trend. Ask for protein target <strong>1.0–1.2 g/kg</strong>; consider whey if deficient.</td>
+</tr>
+
+<tr class="header">
+<th><strong>Sarcopenia — Grip Strength (dynamometer), Gait Speed, Calf Circumference</strong></th>
+<th>Muscle loss</th>
+<th>Indian vegetarian elderly diets are often protein-deficient; muscle loss drives frailty/falls</th>
+<th>Weakness, slow walking, difficulty rising from chairs, stairs</th>
+<th>EWGSOP2 cutoffs: grip</th>
+</tr><tr class="odd">
+<td><strong>Polypharmacy / Medication Review</strong></td>
+<td>Inappropriate or interacting medications</td>
+<td>Elderly accumulate prescriptions; adverse drug events = top hospitalization cause</td>
+<td>Dizziness, falls, confusion, bleeding, kidney injury</td>
+<td><strong>Bring EVERY pill + OTC + herbal.</strong> Review against <strong>Beers Criteria</strong>. Deprescribing = as valuable as any new test.</td>
+</tr><tr class="even">
+<td><strong>Functional Status — ADLs / IADLs</strong></td>
+<td>Independence in daily living</td>
+<td>Establishes baseline the son can monitor remotely from the U.S.</td>
+<td>Difficulty bathing, dressing, cooking, managing money/medications</td>
+<td>Simple questionnaire. Ask son to compare current vs. 1–2 years ago.</td>
+</tr><tr class="odd">
+<td><strong>Sleep Apnea Screen — STOP-BANG</strong></td>
+<td>Obstructive sleep apnea</td>
+<td>Snoring/witnessed apnea → resistant HTN, nocturia, cognition/mood decline, CV risk</td>
+<td>Snoring, witnessed apnea, daytime sleepiness, morning headaches</td>
+<td>If high suspicion, do polysomnography/home sleep study (questionnaires alone don't diagnose).</td>
+</tr><tr class="even">
+<td><strong>Urinary Incontinence Screen</strong></td>
+<td>Urge/stress/overflow incontinence</td>
+<td>Often prostate/neurologic/medication-driven; causes falls rushing to toilet</td>
+<td>Leakage, nocturia, urgency</td>
+<td>Review diuretics, diabetes, constipation, prostate symptoms.</td>
+</tr><tr class="odd">
+<td><strong>Home-Safety / Fall-Hazard Review</strong></td>
+<td>Environmental risks</td>
+<td>Falls preventable with simple modifications</td>
+<td>Near-falls, unsafe bathroom/stairs</td>
+<td>Grab bars, night lighting, remove loose rugs, footwear check. Consider physiotherapy home assessment.</td>
+</tr><tr class="even">
+<td><strong>Advance Care Planning</strong></td>
+<td>Goals of care, emergency plan</td>
+<td>Prevents crisis decisions later</td>
+<td>—</td>
+<td>Document emergency contacts, medication list, allergies, preferred hospital, insurance, decision-maker if incapacitated.</td>
+</tr></tbody>
+</table></div>
+</section>
+
+<section class="test-sec" id="19-specialist-consultations">
+<h2>19. Specialist Consultations</h2>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 28%"/>
+<col style="width: 16%"/>
+<col style="width: 13%"/>
+<col style="width: 19%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Consultation / Test</th>
+<th>What It Checks</th>
+<th>Why It Matters</th>
+<th>Signs / Red Flags</th>
+<th>Notes for the Doctor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Geriatric Medicine / Internal Medicine Consult</strong></td>
+<td>Orchestrates CGA, synthesizes everything</td>
+<td>The "quarterback" who prevents over-testing and integrates results into a life-expectancy-appropriate plan</td>
+<td>—</td>
+<td><strong>Book this FIRST if possible</strong> — a geriatrician will right-size the entire battery.</td>
+</tr>
+<tr class="even">
+<td><strong>Cardiology Consult</strong></td>
+<td>Integrates BP/ECG/echo/lipid/CAC findings</td>
+<td>Synthesizes CV workup given age + South-Asian risk</td>
+<td>—</td>
+<td>Bring lipid, ApoB, Lp(a), hs-CRP, ECG, echo results.</td>
+</tr>
+<tr class="odd">
+<td><strong>Urology Consult</strong></td>
+<td>Prostate (BPH/cancer), urinary symptoms</td>
+<td>Near-universal prostate issues at this age</td>
+<td>Urinary symptoms, high PSA</td>
+<td>If PSA elevated or urinary symptoms present. Complete IPSS before visit.</td>
+</tr>
+<tr class="even">
+<td><strong>Comprehensive Eye Exam (Ophthalmology)</strong></td>
+<td>Cataract, glaucoma, diabetic retinopathy, macular degeneration, refraction</td>
+<td>Vision loss = major cause of falls &amp; cognitive decline; glaucoma silent until late</td>
+<td>Blurred vision, halos, field loss, difficulty reading</td>
+<td>Include <strong>dilated fundoscopy</strong> (diabetic retinopathy — ICMR mandates annual in diabetics) + <strong>tonometry</strong> (glaucoma) + cataract assessment. AAO recommends every 1–2 years ≥65.</td>
+</tr>
+<tr class="odd">
+<td><strong>Hearing Test (Audiometry / ENT)</strong></td>
+<td>Age-related hearing loss (presbycusis)</td>
+<td>Strongly linked to social isolation, depression, <strong>accelerated dementia</strong></td>
+<td>Asking to repeat, TV volume high, social withdrawal, tinnitus</td>
+<td>Pure-tone audiometry in soundproof booth (whisper tests insufficient). Correcting hearing = high-impact dementia-risk reduction. Check/remove cerumen first.</td>
+</tr>
+<tr class="even">
+<td><strong>Dental Examination</strong></td>
+<td>Oral health, gum disease, oral cancer, chewing ability</td>
+<td>Poor dentition → malnutrition; periodontal disease linked to CVD; oral cancer screen (tobacco burden)</td>
+<td>Tooth loss, gum disease, non-healing lesions, difficulty chewing</td>
+<td>Combine with oral-cancer visual exam. Essential before bisphosphonate therapy for osteoporosis.</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+
+<section class="test-sec" id="20-suggested-3-week-sequencing">
+<h2>20. Suggested 3-Week Sequencing</h2>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 11%"/>
+<col style="width: 88%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Week</th>
+<th>Activities</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Week 1</strong></td>
+<td>Geriatric/internal-medicine consult (right-size everything) + <strong>one fasting blood draw</strong> (all panels: CBC, CMP, lipids + ApoB/Lp(a)/hs-CRP, HbA1c/FPG, B12-Active/MMA, vitamin D, iron, TSH, homocysteine, uric acid, urine + ACR). BP (both arms + orthostatic), ECG. Book specialist &amp; imaging slots.</td>
+</tr>
+<tr class="even">
+<td><strong>Week 2</strong></td>
+<td>Imaging: abdominal + pelvic USG (with aorta + post-void residual + prostate volume), DEXA hip+spine, LDCT chest only if smoking-eligible, AAA if ever-smoked. Eye (dilated + tonometry), audiometry, dental/oral-cancer exam. Geriatric assessments: MoCA, GDS-15, TUG, grip strength, MNA, ADL/IADL, STOP-BANG.</td>
+</tr>
+<tr class="odd">
+<td><strong>Week 3</strong></td>
+<td>Results review with physician/geriatrician. Shared-decision items: PSA (free/total ratio), FIT vs colonoscopy, stress test only if symptomatic. Referrals to cardiology/urology/GI as needed. <strong>Vaccination catch-up + medication rationalization (Beers Criteria) + fall-prevention + a remote monitoring plan the son can track from the U.S.</strong></td>
+</tr>
+</tbody>
+</table></div>
+</section>
+
+<section class="test-sec" id="two-sentences-to-say-to-every-doctor">
+<h2>Two Sentences to Say to Every Doctor</h2>
+<p><em>"He's a mid-70s senior — please establish a baseline, screen appropriately for his life expectancy, and flag reversible problems."</em></p><p><em>"Please use age-adjusted ranges for TSH, PSA, and kidney function, and specifically order ApoB, Lp(a) once-in-a-lifetime, hs-CRP, Active B12, and cystatin C — they're not in the standard package."</em></p>
+</section>
+
+      </div>
+    </div>
+  </section>
+  <section id="panel-hospitals" class="tabpanel" role="tabpanel" aria-labelledby="tab-btn-hospitals">
+    <div class="panel-header">
+      <p class="panel-eyebrow">02 · Hospitals</p>
+      <h2>Senior Citizen Executive Health Check Packages</h2>
+      <p class="dek">Five hospitals in India that offer a health-check package built specifically for senior citizens, not just a generic executive checkup.</p>
+    </div>
+    <div class="prose">
+      <div class="hospital-grid">
+        <div class="hospital-row">
+          <h3>Apollo</h3>
+          <a class="visit" href="https://www.apollohospitals.com/departments/preventivehealth/ascc" target="_blank" rel="noopener">View package →</a>
+        </div>
+        <div class="hospital-row">
+          <h3>Lilavati</h3>
+          <a class="visit" href="https://www.lilavatihospital.com/services/health-check-up" target="_blank" rel="noopener">View package →</a>
+        </div>
+        <div class="hospital-row">
+          <h3>Nanavati</h3>
+          <a class="visit" href="https://www.nanavatimaxhospital.org/preventive-health-plans" target="_blank" rel="noopener">View package →</a>
+        </div>
+        <div class="hospital-row">
+          <h3>BLK Max</h3>
+          <a class="visit" href="https://www.blkmaxhospital.com/preventive-health-plans" target="_blank" rel="noopener">View package →</a>
+        </div>
+        <div class="hospital-row">
+          <h3>Fortis</h3>
+          <a class="visit" href="https://www.fortishealthcare.com/health-check-packages" target="_blank" rel="noopener">View package →</a>
+        </div>
+      </div>
+      <p style="margin-top:26px;color:var(--ink-faint);font-size:13.5px;">See the <strong>Comparison</strong> tab for how these five stack up against each other, and the <strong>Questions</strong> tab before calling any of them.</p>
+    </div>
+  </section>
+  <section id="panel-comparison" class="tabpanel" role="tabpanel" aria-labelledby="tab-btn-comparison">
+    <div class="panel-header">
+      <p class="panel-eyebrow">03 · Comparison</p>
+      <h2>Health Check Package Comparison</h2>
+      <p class="dek">Apollo vs Lilavati vs Nanavati Max vs BLK Max vs Fortis.</p>
+    </div>
+    <div class="prose">
+<h2 id="executive-summary">Executive Summary</h2>
+<p class="label">Priority is:</p>
+<ol type="1">
+<li><p><strong>Find silent life-threatening conditions early</strong></p>
+<ul>
+<li><p>Coronary artery disease</p></li>
+<li><p>Diabetes/metabolic disease</p></li>
+<li><p>Kidney disease</p></li>
+<li><p>Cancer</p></li>
+<li><p>Stroke risk</p></li>
+<li><p>Heart failure</p></li>
+<li><p>Cognitive decline</p></li>
+</ul></li>
+<li><p><strong>Establish a baseline for the next 5–10 years</strong></p>
+<ul>
+<li><p>So future doctors know what "normal" looks like.</p></li>
+</ul></li>
+<li><p><strong>Avoid unnecessary testing</strong></p>
+<ul>
+<li><p>More tests ≠ better healthcare.</p></li>
+<li><p>False positives can lead to unnecessary biopsies, scans, anxiety, and procedures.</p></li>
+</ul></li>
+</ol>
+<h2 id="overall-ranking-quality-long-term-outcome">Overall Ranking (Quality + Long-Term Outcome)</h2>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 9%"/>
+<col style="width: 32%"/>
+<col style="width: 57%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rank</th>
+<th>Hospital</th>
+<th>Overall Assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="rank r1">1</span></td>
+<td><strong>Apollo Hospitals Senior Citizen Check</strong></td>
+<td>Best balance of preventive medicine, specialist access, diagnostics, and national reputation</td>
+</tr>
+<tr class="even">
+<td><span class="rank r2">2</span></td>
+<td><strong>Nanavati Max Preventive Health</strong></td>
+<td>Excellent Mumbai option, particularly strong if follow-up specialists are needed</td>
+</tr>
+<tr class="odd">
+<td><span class="rank r3">3</span></td>
+<td><strong>Fortis Executive Health Check</strong></td>
+<td>Strong diagnostics and cardiac capabilities</td>
+</tr>
+<tr class="even">
+<td><span class="rank">4</span></td>
+<td><strong>Lilavati Hospital Health Check</strong></td>
+<td>Excellent hospital reputation but package transparency varies</td>
+</tr>
+<tr class="odd">
+<td><span class="rank">5</span></td>
+<td><strong>BLK-Max Delhi</strong></td>
+<td>Excellent tertiary hospital, but less practical unless Delhi is convenient</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="overall-recommendation">Overall Recommendation</h2>
+<div class="option-grid"><div class="option-card"><span class="tag">Option A (Best overall)</span><h4>Apollo Senior Citizen Executive Health Check</h4><ul>
+<li><p>Strong preventive health infrastructure</p></li>
+<li><p>Large specialist network</p></li>
+<li><p>Good ability to handle abnormal findings immediately</p></li>
+<li><p>Strong diagnostics</p></li>
+<li><p>Better coordination model</p></li>
+</ul></div><div class="option-card"><span class="tag">Option B (If staying in Mumbai)</span><h4>Nanavati Max</h4><ul>
+<li><p>Excellent tertiary-care hospital</p></li>
+<li><p>Good specialist availability</p></li>
+<li><p>Convenient for Mumbai residents</p></li>
+<li><p>Easier long-term follow-up</p></li>
+</ul></div><div class="option-card"><span class="tag">Option C</span><h4>Fortis</h4><ul>
+<li><p>Cardiac risk is the main concern</p></li>
+<li><p>There is history of:</p>
+<ul>
+<li><p>hypertension</p></li>
+<li><p>diabetes</p></li>
+<li><p>smoking</p></li>
+<li><p>previous cardiac issues</p></li>
+</ul></li>
+</ul></div></div>
+<h2 id="the-most-important-observation">The Most Important Observation</h2>
+<p>None of these packages should be accepted blindly.</p>
+<p class="label">A 70–75-year-old male needs more than:</p>
+<p>"120 blood tests + ECG + ultrasound"</p>
+<p class="label">A proper geriatric evaluation should include:</p>
+<ul class="check-list good"><li><span class="box"></span><span>Disease screening</span></li><li><span class="box"></span><span>Functional health</span></li><li><span class="box"></span><span>Cognitive health</span></li><li><span class="box"></span><span>Mobility</span></li><li><span class="box"></span><span>Medication review</span></li><li><span class="box"></span><span>Nutrition</span></li><li><span class="box"></span><span>Fall risk</span></li><li><span class="box"></span><span>Quality-of-life assessment</span></li></ul>
+<p>Most executive packages are weak in these areas.</p>
+<h2 id="package-by-package-analysis">Package-by-Package Analysis</h2>
+<h3 id="1-apollo-hospitals-senior-citizen-executive-health-check">1. Apollo Hospitals — Senior Citizen Executive Health Check</h3>
+<h4>Strengths</h4>
+<p>Cardiac evaluation</p>
+<p>Usually among the strongest components.</p>
+<p class="label">Expected components:</p>
+<ul>
+<li><p>ECG</p></li>
+<li><p>Echocardiogram</p></li>
+<li><p>Stress testing depending on package</p></li>
+<li><p>Cardiology consultation</p></li>
+</ul>
+<p>Very important because cardiovascular disease remains the biggest health threat in elderly men.</p>
+<p>Laboratory evaluation</p>
+<p class="label">Typically strong:</p>
+<p class="label">Expected:</p>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 45%"/>
+<col style="width: 54%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>Importance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CBC</td>
+<td>anemia, infection</td>
+</tr>
+<tr class="even">
+<td>Kidney function</td>
+<td>CKD detection</td>
+</tr>
+<tr class="odd">
+<td>Liver function</td>
+<td>medication safety</td>
+</tr>
+<tr class="even">
+<td>Lipid profile</td>
+<td>cardiovascular risk</td>
+</tr>
+<tr class="odd">
+<td>HbA1c</td>
+<td>diabetes</td>
+</tr>
+<tr class="even">
+<td>Thyroid</td>
+<td>metabolic issues</td>
+</tr>
+<tr class="odd">
+<td>Vitamin D</td>
+<td>bone health</td>
+</tr>
+<tr class="even">
+<td>B12</td>
+<td>neurological health</td>
+</tr>
+</tbody>
+</table></div>
+<p>Imaging</p>
+<p class="label">Usually includes:</p>
+<ul>
+<li><p>Ultrasound abdomen</p></li>
+<li><p>Chest imaging</p></li>
+<li><p>X-ray</p></li>
+</ul>
+<p class="label">Useful for:</p>
+<ul>
+<li><p>liver</p></li>
+<li><p>kidneys</p></li>
+<li><p>gallbladder</p></li>
+<li><p>prostate enlargement</p></li>
+</ul>
+<h4>Apollo Weaknesses</h4>
+<p class="label">Potential missing areas:</p>
+<p>Cognitive assessment</p>
+<p>Very important after 70.</p>
+<p class="label">Should include:</p>
+<ul>
+<li><p>Mini-Cog</p></li>
+<li><p>MoCA</p></li>
+<li><p>MMSE</p></li>
+</ul>
+<p>Frailty assessment</p>
+<p class="label">Should assess:</p>
+<ul>
+<li><p>walking speed</p></li>
+<li><p>grip strength</p></li>
+<li><p>muscle loss</p></li>
+<li><p>falls risk</p></li>
+</ul>
+<p>Hearing</p>
+<p>Often overlooked.</p>
+<p>Vaccination review</p>
+<p class="label">Should include:</p>
+<ul>
+<li><p>influenza</p></li>
+<li><p>pneumococcal</p></li>
+<li><p>shingles</p></li>
+<li><p>COVID boosters</p></li>
+<li><p>tetanus</p></li>
+</ul>
+<p>Apollo Score</p>
+<div class="table-wrap"><table class="simple">
+<colgroup>
+<col style="width: 75%"/>
+<col style="width: 24%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Diagnostics</td>
+<td><div class="score-bar"><div class="track"><div class="fill" style="width:90%"></div></div><div class="txt">9/10</div></div></td>
+</tr>
+<tr class="even">
+<td>Specialists</td>
+<td><div class="score-bar"><div class="track"><div class="fill" style="width:100%"></div></div><div class="txt">10/10</div></div></td>
+</tr>
+<tr class="odd">
+<td>Preventive approach</td>
+<td><div class="score-bar"><div class="track"><div class="fill" style="width:85%"></div></div><div class="txt">8.5/10</div></div></td>
+</tr>
+<tr class="even">
+<td>Elderly-specific care</td>
+<td><div class="score-bar"><div class="track"><div class="fill" style="width:80%"></div></div><div class="txt">8/10</div></div></td>
+</tr>
+</tbody>
+</table></div>
+<div class="score-stat"><span class="num">90</span><span class="of">/ 100</span></div>
+<h3 id="2-nanavati-max-preventive-health-plans">2. Nanavati Max Preventive Health Plans</h3>
+<h4>Strengths</h4>
+<p>Excellent Mumbai choice.</p>
+<p class="label">Particularly strong:</p>
+<ul>
+<li><p>Cardiology</p></li>
+<li><p>Oncology</p></li>
+<li><p>Gastroenterology</p></li>
+<li><p>Neurology</p></li>
+</ul>
+<h4>Advantages</h4>
+<p class="label">For an elderly patient:</p>
+<p class="label">One hospital can manage:</p>
+<ul>
+<li><p>abnormal ECG</p></li>
+<li><p>suspicious scan</p></li>
+<li><p>cancer findings</p></li>
+<li><p>neurological concerns</p></li>
+</ul>
+<p>without moving around.</p>
+<h4>Weaknesses</h4>
+<p class="label">Like Apollo:</p>
+<p class="label">May lack:</p>
+<ul>
+<li><p>comprehensive geriatric assessment</p></li>
+<li><p>cognition testing</p></li>
+<li><p>mobility evaluation</p></li>
+</ul>
+<p>Score</p>
+<div class="table-wrap"><table class="simple">
+<colgroup>
+<col style="width: 70%"/>
+<col style="width: 29%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Diagnostics</td>
+<td><div class="score-bar"><div class="track"><div class="fill" style="width:90%"></div></div><div class="txt">9/10</div></div></td>
+</tr>
+<tr class="even">
+<td>Specialists</td>
+<td><div class="score-bar"><div class="track"><div class="fill" style="width:95%"></div></div><div class="txt">9.5/10</div></div></td>
+</tr>
+<tr class="odd">
+<td>Preventive care</td>
+<td><div class="score-bar"><div class="track"><div class="fill" style="width:80%"></div></div><div class="txt">8/10</div></div></td>
+</tr>
+<tr class="even">
+<td>Elderly focus</td>
+<td><div class="score-bar"><div class="track"><div class="fill" style="width:80%"></div></div><div class="txt">8/10</div></div></td>
+</tr>
+</tbody>
+</table></div>
+<div class="score-stat"><span class="num">87</span><span class="of">/ 100</span></div>
+<h3 id="3-fortis-healthcare">3. Fortis Healthcare</h3>
+<h4>Strengths</h4>
+<p class="label">Fortis is particularly strong in:</p>
+<ul>
+<li><p>cardiac care</p></li>
+<li><p>imaging</p></li>
+<li><p>minimally invasive procedures</p></li>
+</ul>
+<p class="label">Good option if father has:</p>
+<ul>
+<li><p>diabetes</p></li>
+<li><p>hypertension</p></li>
+<li><p>chest symptoms</p></li>
+<li><p>cardiac family history</p></li>
+</ul>
+<h4>Weakness</h4>
+<p class="label">Preventive packages can sometimes become:</p>
+<p>"test-heavy"</p>
+<p class="label">rather than:</p>
+<p>"health-management focused."</p>
+<div class="score-stat"><span class="num">85</span><span class="of">/ 100</span></div>
+<h3 id="4-lilavati-hospital">4. Lilavati Hospital</h3>
+<p>Very respected Mumbai institution.</p>
+<p class="label">Strength:</p>
+<ul>
+<li><p>Experienced specialists</p></li>
+<li><p>Strong reputation</p></li>
+</ul>
+<p class="label">Potential limitation:</p>
+<p>The preventive packages appear less standardized compared with Apollo/Nanavati/Fortis.</p>
+<div class="score-stat"><span class="num">82</span><span class="of">/ 100</span></div>
+<h3 id="5-blk-max">5. BLK-Max</h3>
+<p>Excellent tertiary hospital.</p>
+<p class="label">However:</p>
+<p class="label">Unless your friend is already Delhi-based:</p>
+<p>Travel logistics reduce practicality.</p>
+<div class="score-stat"><span class="num">80</span><span class="of">/ 100</span></div>
+<h2 id="tests-to-insist-are-included">Tests to Insist Are Included</h2>
+<p class="label">Regardless of package:</p>
+<h4>Blood Tests</h4>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 58%"/>
+<col style="width: 41%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CBC</td>
+<td>anemia</td>
+</tr>
+<tr class="even">
+<td>HbA1c</td>
+<td>diabetes</td>
+</tr>
+<tr class="odd">
+<td>Fasting glucose</td>
+<td>diabetes</td>
+</tr>
+<tr class="even">
+<td>Lipid profile</td>
+<td>heart risk</td>
+</tr>
+<tr class="odd">
+<td>Creatinine + eGFR</td>
+<td>kidney</td>
+</tr>
+<tr class="even">
+<td>Urine albumin/creatinine ratio</td>
+<td>early kidney damage</td>
+</tr>
+<tr class="odd">
+<td>Liver enzymes</td>
+<td>medication safety</td>
+</tr>
+<tr class="even">
+<td>TSH + Free T4</td>
+<td>thyroid</td>
+</tr>
+<tr class="odd">
+<td>Vitamin B12</td>
+<td>nerves/cognition</td>
+</tr>
+<tr class="even">
+<td>Vitamin D</td>
+<td>bone/muscle</td>
+</tr>
+<tr class="odd">
+<td>Calcium</td>
+<td>bone health</td>
+</tr>
+<tr class="even">
+<td>PSA</td>
+<td>prostate discussion</td>
+</tr>
+<tr class="odd">
+<td>CRP</td>
+<td>inflammation context</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Cardiac Tests</h4>
+<p class="label">Must-have:</p>
+<h4>ECG</h4>
+<p>Yes.</p>
+<h4>Echocardiogram</h4>
+<p>Highly recommended.</p>
+<p class="label">Checks:</p>
+<ul>
+<li><p>pumping ability</p></li>
+<li><p>valves</p></li>
+<li><p>heart enlargement</p></li>
+</ul>
+<h4>Stress Test</h4>
+<p class="label">Depends on:</p>
+<ul>
+<li><p>fitness level</p></li>
+<li><p>risk factors</p></li>
+<li><p>symptoms</p></li>
+</ul>
+<h4>CT Coronary Calcium Score</h4>
+<p>Interesting optional test.</p>
+<p class="label">Useful if:</p>
+<ul>
+<li><p>no known heart disease</p></li>
+<li><p>wants better risk prediction</p></li>
+</ul>
+<p>Not necessary for everyone.</p>
+<h4>Cancer Screening</h4>
+<h4>Colon cancer</h4>
+<p class="label">At age 70–75:</p>
+<p>Very important.</p>
+<p class="label">Options:</p>
+<ul>
+<li><p>FIT stool test yearly — or</p></li>
+<li><p>Colonoscopy</p></li>
+</ul>
+<h4>Prostate</h4>
+<p class="label">PSA:</p>
+<p>Discuss.</p>
+<p>Not automatic.</p>
+<h4>Lung cancer</h4>
+<p class="label">Only if:</p>
+<ul>
+<li><p>significant smoking history</p></li>
+</ul>
+<p>Low-dose CT.</p>
+<h4>Imaging: I Would Add</h4>
+<p>DEXA Bone Scan</p>
+<p class="label">Even though male:</p>
+<p>important.</p>
+<p>Why?</p>
+<p>Falls + fractures can drastically reduce independence.</p>
+<p>Carotid Doppler</p>
+<p>Controversial.</p>
+<p>Not routine for everyone.</p>
+<p class="label">Consider only if:</p>
+<ul>
+<li><p>stroke history</p></li>
+<li><p>vascular disease</p></li>
+<li><p>bruit</p></li>
+<li><p>high risk</p></li>
+</ul>
+<h2 id="tests-not-to-automatically-pay-for">Tests NOT to Automatically Pay For</h2>
+<p class="label">Many executive packages add:</p>
+<h4>Tumor markers</h4>
+<p class="label">Examples:</p>
+<ul>
+<li><p>CEA</p></li>
+<li><p>CA19-9</p></li>
+<li><p>CA125</p></li>
+<li><p>AFP</p></li>
+</ul>
+<p class="label">Problem:</p>
+<p>They create false alarms.</p>
+<p>They are not good screening tools in healthy people.</p>
+<h4>Whole-body CT scan</h4>
+<p>Not automatically beneficial.</p>
+<p>Can find harmless abnormalities leading to unnecessary procedures.</p>
+    </div>
+  </section>
+  <section id="panel-plan" class="tabpanel" role="tabpanel" aria-labelledby="tab-btn-plan">
+    <div class="panel-header">
+      <p class="panel-eyebrow">04 · Plan</p>
+      <h2>3-Week Plan</h2>
+      <p class="dek">From booking the package to a finished medical summary, in three weeks.</p>
+    </div>
+    <div class="prose">
+
+      <h3>Day 1</h3>
+      <p>Book the executive package. Do:</p>
+      <ul>
+        <li>Fasting blood</li>
+        <li>Urine</li>
+        <li>ECG</li>
+        <li>Imaging</li>
+      </ul>
+
+      <h3>Day 3–5</h3>
+      <p>Review with:</p>
+      <ul>
+        <li>Physician</li>
+        <li>Cardiologist</li>
+      </ul>
+
+      <h3>Week 2</h3>
+      <p>Only if needed:</p>
+      <ul>
+        <li>Gastroenterology</li>
+        <li>Urology</li>
+        <li>Endocrinology</li>
+        <li>Neurology</li>
+      </ul>
+
+      <h3>Week 3</h3>
+      <p>Create:</p>
+      <ul>
+        <li>Medical summary</li>
+        <li>Medication list</li>
+        <li>Future screening calendar</li>
+      </ul>
+
+      <h3>Final Recommendation</h3>
+      <div class="option-grid">
+        <div class="option-card">
+          <span class="tag">If Mumbai is convenient</span>
+          <h4>🥇 Nanavati Max</h4>
+          <ul>
+            <li>Likely already has local access</li>
+            <li>Excellent specialists</li>
+            <li>Easier long-term continuity</li>
+          </ul>
+        </div>
+        <div class="option-card">
+          <span class="tag">If willing to travel anywhere</span>
+          <h4>🥇 Apollo Senior Citizen Executive Health Check</h4>
+          <ul>
+            <li>Strongest preventive ecosystem</li>
+            <li>Better coordination</li>
+            <li>Excellent specialist depth</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="quote-block">
+        "Can you customize this as a comprehensive geriatric assessment for a 72–75-year-old male, including cognition, frailty, fall risk, medication review, vaccination review, and preventive screening?"
+      </div>
+      <p>Whichever hospital is selected, do <strong>not</strong> simply buy the package as-is — ask that question first. It's the single line that separates a true senior-care evaluation from a marketing package.</p>
+    </div>
+  </section>
+  <section id="panel-checklist" class="tabpanel" role="tabpanel" aria-labelledby="tab-btn-checklist">
+    <div class="panel-header">
+      <p class="panel-eyebrow">05 · Checklist</p>
+      <h2>Checklist</h2>
+      <p class="dek">What to gather before the hospital visit.</p>
+    </div>
+    <div class="prose">
+
+      <h3>A. Before the Hospital Visit</h3>
+      <p class="label">Collect</p>
+      <ul class="check-list">
+        <li><span class="box"></span><span>Previous medical records (last 5–10 years if available)</span></li>
+        <li><span class="box"></span><span>Current medication list (including supplements)</span></li>
+        <li><span class="box"></span><span>Previous blood reports</span></li>
+        <li><span class="box"></span><span>Previous ECG / Echo / stress test reports</span></li>
+        <li><span class="box"></span><span>Vaccination records</span></li>
+      </ul>
+
+      <p class="label">Family history</p>
+      <ul>
+        <li>Heart attack</li>
+        <li>Stroke</li>
+        <li>Cancer</li>
+        <li>Diabetes</li>
+        <li>Dementia</li>
+        <li>Kidney disease</li>
+      </ul>
+
+      <h3>B. Lifestyle History</h3>
+      <ul>
+        <li>Smoking</li>
+        <li>Alcohol</li>
+        <li>Exercise</li>
+        <li>Diet</li>
+        <li>Sleep quality</li>
+      </ul>
+    </div>
+  </section>
+  <section id="panel-missed" class="tabpanel" role="tabpanel" aria-labelledby="tab-btn-missed">
+    <div class="panel-header">
+      <p class="panel-eyebrow">06 · Often Missed</p>
+      <h2>Tests Packages Miss</h2>
+      <p class="dek">Five assessments most executive health-check packages leave out entirely.</p>
+    </div>
+    <div class="prose">
+
+      <h3>1. Cognitive Screening</h3>
+      <p class="label">Recommended</p>
+      <p>MoCA (Montreal Cognitive Assessment), or Mini-Cog.</p>
+      <p class="label">Checks</p>
+      <ul><li>Memory</li><li>Attention</li><li>Executive function</li></ul>
+      <p>Early cognitive decline can often be managed better when identified early.</p>
+
+      <h3>2. Frailty Assessment</h3>
+      <p class="label">Ask for</p>
+      <p>Clinical Frailty Scale.</p>
+      <p class="label">Looks at</p>
+      <ul><li>Independence</li><li>Walking</li><li>Daily activities</li><li>Physical reserve</li></ul>
+      <p>A healthy 75-year-old and a frail 75-year-old are medically very different.</p>
+
+      <h3>3. Fall Risk Assessment</h3>
+      <p class="label">Should include</p>
+      <p>Timed Up and Go Test.</p>
+      <p class="label">Checks</p>
+      <ul><li>Mobility</li><li>Balance</li><li>Fall risk</li></ul>
+
+      <h3>4. Muscle Loss Assessment</h3>
+      <p>Age-related muscle loss (sarcopenia) can increase falls, hospitalization risk, and loss of independence.</p>
+      <p class="label">Useful</p>
+      <ul><li>Hand grip strength</li><li>Body composition assessment</li></ul>
+
+      <h3>5. Nutrition Assessment</h3>
+      <p class="label">Ask</p>
+      <ul>
+        <li>Is protein intake adequate?</li>
+        <li>Is weight changing unintentionally?</li>
+        <li>Is vitamin deficiency present?</li>
+      </ul>
+    </div>
+  </section>
+  <section id="panel-questions" class="tabpanel" role="tabpanel" aria-labelledby="tab-btn-questions">
+    <div class="panel-header">
+      <p class="panel-eyebrow">07 · Questions</p>
+      <h2>Questions to Ask Before Booking</h2>
+      <p class="dek">Call the hospital and ask these four questions before paying for anything.</p>
+    </div>
+    <div class="prose">
+
+      <h3>Question 1</h3>
+      <div class="quote-block">"Is this package designed specifically for people above 70, or is it just an executive checkup?"</div>
+
+      <h3>Question 2</h3>
+      <div class="quote-block">"Does it include geriatric assessment?"</div>
+      <p class="label">Ask specifically about</p>
+      <ul><li>Cognition</li><li>Falls</li><li>Frailty</li><li>Nutrition</li></ul>
+
+      <h3>Question 3</h3>
+      <div class="quote-block">"Who reviews abnormal results?"</div>
+      <p>Not just a PDF sent over — you need a physician interpretation.</p>
+
+      <h3>Question 4</h3>
+      <div class="quote-block">"Can we add targeted tests after initial results?"</div>
+      <p>Good hospitals should allow this.</p>
+    </div>
+  </section>
+  <section id="panel-important" class="tabpanel" role="tabpanel" aria-labelledby="tab-btn-important">
+    <div class="panel-header">
+      <p class="panel-eyebrow">08 · Must-Have</p>
+      <h2>Important — Regardless of Hospital</h2>
+      <p class="dek">The non-negotiables. If a package skips these, ask for them to be added.</p>
+    </div>
+    <div class="prose">
+
+      <p class="label">Mandatory tests to add</p>
+      <ul class="check-list done">
+        <li><span class="box"></span><span>Cognitive screening</span></li>
+        <li><span class="box"></span><span>Frailty assessment</span></li>
+        <li><span class="box"></span><span>Fall risk assessment</span></li>
+        <li><span class="box"></span><span>Bone density scan</span></li>
+        <li><span class="box"></span><span>Hearing test</span></li>
+        <li><span class="box"></span><span>Medication review</span></li>
+        <li><span class="box"></span><span>Vaccination review</span></li>
+      </ul>
+
+      <p class="label">Aim</p>
+      <div class="quote-block">"Find important problems early and create a sustainable health plan."</div>
+
+      <div class="callout">
+        <span class="callout-title">The most important addition</span>
+        <p>Regardless of hospital, request a <strong>Comprehensive Geriatric Assessment (CGA)</strong>.</p>
+        <p>That's the piece most executive packages lack — and the one most likely to improve quality of life over the next decade.</p>
+      </div>
+    </div>
+  </section>
+  </div>
+</main>
+
+<footer>
+  Personal reference document, compiled from independent research — not medical advice. Verify every detail with your physician.
+</footer>
+
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab-btn'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.tabpanel'));
+
+  function activate(name, opts){
+    opts = opts || {};
+    tabs.forEach(function(btn){
+      var selected = btn.getAttribute('data-tab') === name;
+      btn.setAttribute('aria-selected', selected ? 'true' : 'false');
+      btn.tabIndex = selected ? 0 : -1;
+    });
+    panels.forEach(function(p){
+      p.classList.toggle('active', p.id === 'panel-' + name);
+    });
+    if (opts.scrollIntoView){
+      var active = document.querySelector('.tab-btn[data-tab="' + name + '"]');
+      if (active) active.scrollIntoView({ block:'nearest', inline:'center' });
+    }
+    if (opts.updateHash !== false){
+      history.replaceState(null, '', '#' + name);
+    }
+  }
+
+  tabs.forEach(function(btn, i){
+    btn.addEventListener('click', function(){ activate(btn.getAttribute('data-tab')); });
+    btn.addEventListener('keydown', function(e){
+      var dir = 0;
+      if (e.key === 'ArrowRight') dir = 1;
+      else if (e.key === 'ArrowLeft') dir = -1;
+      else if (e.key === 'Home'){ tabs[0].focus(); activate(tabs[0].getAttribute('data-tab')); return; }
+      else if (e.key === 'End'){ tabs[tabs.length-1].focus(); activate(tabs[tabs.length-1].getAttribute('data-tab')); return; }
+      else return;
+      e.preventDefault();
+      var next = (i + dir + tabs.length) % tabs.length;
+      tabs[next].focus();
+      activate(tabs[next].getAttribute('data-tab'));
+    });
+  });
+
+  var initial = (location.hash || '').replace('#','');
+  var valid = tabs.some(function(t){ return t.getAttribute('data-tab') === initial; });
+  activate(valid ? initial : 'tests', { updateHash:false, scrollIntoView:true });
+
+  // Test List: sticky TOC highlight + mobile jump select
+  var testsPanel = document.getElementById('panel-tests');
+  if (testsPanel){
+    var tocLinks = Array.prototype.slice.call(testsPanel.querySelectorAll('.tests-toc a'));
+    var sections = Array.prototype.slice.call(testsPanel.querySelectorAll('section.test-sec'));
+    var jumpSelect = testsPanel.querySelector('.tests-jump select');
+
+    if (jumpSelect){
+      jumpSelect.addEventListener('change', function(){
+        var target = document.getElementById(jumpSelect.value);
+        if (target) target.scrollIntoView({ behavior:'smooth', block:'start' });
+      });
+    }
+
+    function onScroll(){
+      if (!testsPanel.classList.contains('active')) return;
+      var pos = window.scrollY + 100;
+      var current = sections[0];
+      sections.forEach(function(sec){
+        if (sec.offsetTop <= pos) current = sec;
+      });
+      tocLinks.forEach(function(a){
+        a.classList.toggle('current', current && a.getAttribute('href') === '#' + current.id);
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive:true });
+    onScroll();
+  }
+})();
+</script>
+</body>
+</html>
